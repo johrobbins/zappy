@@ -37,6 +37,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FFE4164924C993D000675C87 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFED39CF24C722DE003834B8 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FFE4164A24C993EA00675C87 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FFED39D124C722DE003834B8 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FFE4164B24C9940100675C87 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FFE4164C24C9942500675C87 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FFED39CB24C722DE003834B8 /* AppDelegate.swift */,
+				FFED39CD24C722DE003834B8 /* SceneDelegate.swift */,
+				FFED39D624C722E0003834B8 /* LaunchScreen.storyboard */,
+				FFED39D924C722E0003834B8 /* Info.plist */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
 		FFED39BF24C722DE003834B8 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +90,11 @@
 		FFED39CA24C722DE003834B8 /* zappy */ = {
 			isa = PBXGroup;
 			children = (
-				FFED39CB24C722DE003834B8 /* AppDelegate.swift */,
-				FFED39CD24C722DE003834B8 /* SceneDelegate.swift */,
-				FFED39CF24C722DE003834B8 /* ViewController.swift */,
-				FFED39D124C722DE003834B8 /* Main.storyboard */,
+				FFE4164924C993D000675C87 /* Controllers */,
+				FFE4164A24C993EA00675C87 /* Views */,
+				FFE4164B24C9940100675C87 /* Models */,
+				FFE4164C24C9942500675C87 /* Application */,
 				FFED39D424C722E0003834B8 /* Assets.xcassets */,
-				FFED39D624C722E0003834B8 /* LaunchScreen.storyboard */,
-				FFED39D924C722E0003834B8 /* Info.plist */,
 			);
 			path = zappy;
 			sourceTree = "<group>";
