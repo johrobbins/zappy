@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FFE4164E24C99CF800675C87 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4164D24C99CF800675C87 /* Location.swift */; };
 		FFE4167124CAF99100675C87 /* ForecastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */; };
+		FFE4167324CB16B500675C87 /* ForecastViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */; };
 		FFED39CC24C722DE003834B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CB24C722DE003834B8 /* AppDelegate.swift */; };
 		FFED39CE24C722DE003834B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CD24C722DE003834B8 /* SceneDelegate.swift */; };
 		FFED39D024C722DE003834B8 /* LocationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CF24C722DE003834B8 /* LocationListTableViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		FFE4164D24C99CF800675C87 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListTableViewController.swift; sourceTree = "<group>"; };
+		FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift.swift; sourceTree = "<group>"; };
 		FFED39C824C722DE003834B8 /* zappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFED39CB24C722DE003834B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFED39CD24C722DE003834B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 			children = (
 				FFED39CF24C722DE003834B8 /* LocationListTableViewController.swift */,
 				FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */,
+				FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE4167324CB16B500675C87 /* ForecastViewController.swift.swift in Sources */,
 				FFE4167124CAF99100675C87 /* ForecastListTableViewController.swift in Sources */,
 				FFED39D024C722DE003834B8 /* LocationListTableViewController.swift in Sources */,
 				FFED39CC24C722DE003834B8 /* AppDelegate.swift in Sources */,
