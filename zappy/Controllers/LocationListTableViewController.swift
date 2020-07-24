@@ -36,5 +36,11 @@ class LocationListTableViewController: UITableViewController {
   // MARK: - Segue Handler
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "SelectForecast",
+    let forecastViewController = segue.destination as? ForecastListTableViewController {
+      let indexPath = tableView.indexPathForSelectedRow!
+      let location = locations[indexPath.row]
+      forecastViewController.location = location
+    }
   }
 }
