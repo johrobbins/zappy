@@ -8,7 +8,7 @@ import UIKit
 class ForecastViewController: UIViewController {
   @IBOutlet private var cityLabel: UILabel!
 
-  var screenTitle: String?
+  var forecast: Forecast?
   var location: Location?
 
   override func viewDidLoad() {
@@ -17,7 +17,7 @@ class ForecastViewController: UIViewController {
   }
 
   private func setupUI() {
-    navigationItem.title = screenTitle
+    navigationItem.title = forecast?.rawValue
     guard let location = location else { return }
     cityLabel.text = location.city
   }

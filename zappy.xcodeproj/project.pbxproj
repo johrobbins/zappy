@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		FFE4164E24C99CF800675C87 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4164D24C99CF800675C87 /* Location.swift */; };
 		FFE4167124CAF99100675C87 /* ForecastListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */; };
-		FFE4167324CB16B500675C87 /* ForecastViewController.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */; };
+		FFE4167324CB16B500675C87 /* ForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167224CB16B500675C87 /* ForecastViewController.swift */; };
+		FFE4167624CD89EB00675C87 /* UserPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167524CD89EA00675C87 /* UserPreferences.swift */; };
+		FFE4167824CDB62B00675C87 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167724CDB62B00675C87 /* Favorite.swift */; };
+		FFE4167A24CDB69500675C87 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE4167924CDB69500675C87 /* Forecast.swift */; };
 		FFED39CC24C722DE003834B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CB24C722DE003834B8 /* AppDelegate.swift */; };
 		FFED39CE24C722DE003834B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CD24C722DE003834B8 /* SceneDelegate.swift */; };
 		FFED39D024C722DE003834B8 /* LocationListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFED39CF24C722DE003834B8 /* LocationListTableViewController.swift */; };
@@ -21,7 +24,10 @@
 /* Begin PBXFileReference section */
 		FFE4164D24C99CF800675C87 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastListTableViewController.swift; sourceTree = "<group>"; };
-		FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift.swift; sourceTree = "<group>"; };
+		FFE4167224CB16B500675C87 /* ForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewController.swift; sourceTree = "<group>"; };
+		FFE4167524CD89EA00675C87 /* UserPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferences.swift; sourceTree = "<group>"; };
+		FFE4167724CDB62B00675C87 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		FFE4167924CDB69500675C87 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		FFED39C824C722DE003834B8 /* zappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = zappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFED39CB24C722DE003834B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFED39CD24C722DE003834B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +54,7 @@
 			children = (
 				FFED39CF24C722DE003834B8 /* LocationListTableViewController.swift */,
 				FFE4167024CAF99000675C87 /* ForecastListTableViewController.swift */,
-				FFE4167224CB16B500675C87 /* ForecastViewController.swift.swift */,
+				FFE4167224CB16B500675C87 /* ForecastViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -65,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				FFE4164D24C99CF800675C87 /* Location.swift */,
+				FFE4167724CDB62B00675C87 /* Favorite.swift */,
+				FFE4167924CDB69500675C87 /* Forecast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -78,6 +86,14 @@
 				FFED39D924C722E0003834B8 /* Info.plist */,
 			);
 			name = Application;
+			sourceTree = "<group>";
+		};
+		FFE4167424CD88AB00675C87 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FFE4167524CD89EA00675C87 /* UserPreferences.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FFED39BF24C722DE003834B8 = {
@@ -102,6 +118,7 @@
 				FFE4164924C993D000675C87 /* Controllers */,
 				FFE4164A24C993EA00675C87 /* Views */,
 				FFE4164B24C9940100675C87 /* Models */,
+				FFE4167424CD88AB00675C87 /* Services */,
 				FFE4164C24C9942500675C87 /* Application */,
 				FFED39D424C722E0003834B8 /* Assets.xcassets */,
 			);
@@ -179,8 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFE4167324CB16B500675C87 /* ForecastViewController.swift.swift in Sources */,
+				FFE4167324CB16B500675C87 /* ForecastViewController.swift in Sources */,
+				FFE4167824CDB62B00675C87 /* Favorite.swift in Sources */,
+				FFE4167624CD89EB00675C87 /* UserPreferences.swift in Sources */,
 				FFE4167124CAF99100675C87 /* ForecastListTableViewController.swift in Sources */,
+				FFE4167A24CDB69500675C87 /* Forecast.swift in Sources */,
 				FFED39D024C722DE003834B8 /* LocationListTableViewController.swift in Sources */,
 				FFED39CC24C722DE003834B8 /* AppDelegate.swift in Sources */,
 				FFE4164E24C99CF800675C87 /* Location.swift in Sources */,
