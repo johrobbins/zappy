@@ -10,10 +10,27 @@ class ForecastViewController: UIViewController {
 
   var forecast: Forecast?
   var location: Location?
+  var isFavourited = false;
+
+  private let userPreferences = UserPreferences()
+
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+  }
+
+  @IBAction func toggleFavourite(_ sender: UIBarButtonItem) {
+    isFavourited.toggle()
+    if isFavourited {
+      sender.image = UIImage(systemName: "star.fill")
+      guard let location = location, let forecast = forecast else { return }
+      let favourite = Favourite(location: location, forecast: forecast)
+      userPreferences.saveFavourite(with: favourite)
+    } else {
+      sender.image = UIImage(systemName: "star")
+      userPreferences.removeFavourite()
+    }
   }
 
   private func setupUI() {

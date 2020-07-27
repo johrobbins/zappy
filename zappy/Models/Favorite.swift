@@ -3,7 +3,7 @@
 //  Copyright © 2020 Joh Robbins. All rights reserved.
 //
 
-struct Favorite: Codable {
+struct Favourite: Codable {
   var location: Location
   var forecast: Forecast
 }

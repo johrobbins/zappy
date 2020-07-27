@@ -7,14 +7,26 @@ import Foundation
 
 class UserPreferences {
   private let defaults = UserDefaults.standard
-  private let favoriteKey = "Favorite"
+  private let favouriteKey = "Favourite"
 
-  func saveData(with favorite: Favorite) {
-    defaults.set(favorite, forKey: favoriteKey)
+  func saveFavourite(with favourite: Favourite) {
+    let encoder = JSONEncoder()
+    if let encoded = try? encoder.encode(favourite) {
+        defaults.set(encoded, forKey: favouriteKey)
+    }
   }
 
-  func loadData() -> Favorite? {
-    let savedFavorite = defaults.object(forKey: favoriteKey) as? Favorite
-    return savedFavorite
+  func loadFavourite() -> Favourite? {
+    if let savedFavourite = defaults.object(forKey: favouriteKey) as? Data {
+        let decoder = JSONDecoder()
+        if let loadedFavourite = try? decoder.decode(Favourite.self, from: savedFavourite) {
+            return loadedFavourite
+        }
+    }
+    return nil
+  }
+
+  func removeFavourite() {
+    defaults.removeObject(forKey: favouriteKey)
   }
 }
