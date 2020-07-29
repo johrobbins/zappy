@@ -35,5 +35,13 @@ class ForecastListTableViewController: UITableViewController {
       forecastViewController.forecast = forecast
       forecastViewController.location = location
     }
+
+    if segue.identifier == "ShowForecast",
+    let navigationController = segue.destination as? UINavigationController,
+    let forecastViewController = navigationController.topViewController as? ForecastViewController {
+      let forecast = sender as! Forecast
+      forecastViewController.forecast = forecast
+      forecastViewController.location = location
+    }
   }
 }

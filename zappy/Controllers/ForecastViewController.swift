@@ -6,6 +6,7 @@
 import UIKit
 
 class ForecastViewController: UIViewController {
+  @IBOutlet weak var favouriteBarButtonItem: UIBarButtonItem!
   @IBOutlet private var cityLabel: UILabel!
 
   var forecast: Forecast?
@@ -22,20 +23,29 @@ class ForecastViewController: UIViewController {
 
   @IBAction func toggleFavourite(_ sender: UIBarButtonItem) {
     isFavourited.toggle()
+    animateFavouriteIcon(isFavourited)
     if isFavourited {
-      sender.image = UIImage(systemName: "star.fill")
       guard let location = location, let forecast = forecast else { return }
       let favourite = Favourite(location: location, forecast: forecast)
       userPreferences.saveFavourite(with: favourite)
     } else {
-      sender.image = UIImage(systemName: "star")
       userPreferences.removeFavourite()
     }
   }
 
   private func setupUI() {
     navigationItem.title = forecast?.rawValue
+    animateFavouriteIcon(isFavourited)
+
     guard let location = location else { return }
     cityLabel.text = location.city
+  }
+
+  private func animateFavouriteIcon(_ fill: Bool) {
+    if fill {
+      favouriteBarButtonItem.image = UIImage(systemName: "star.fill")
+    } else {
+      favouriteBarButtonItem.image = UIImage(systemName: "star")
+    }
   }
 }
