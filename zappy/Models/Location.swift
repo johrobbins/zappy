@@ -6,14 +6,14 @@
 //  Copyright © 2020 Joh Robbins. All rights reserved.
 //
 
-import Foundation
-
 struct Location: Codable {
   var city: String
   var state: String
   var latitude: String
   var longitude: String
+}
 
+extension Location {
   static func loadLocations() -> [Location] {
     let sydney = Location(city: "Sydney", state: "NSW", latitude: "-33.8548157", longitude: "151.2164539")
     let melbourne = Location(city: "Melbourne", state: "VIC", latitude: "-37.8142176", longitude: "144.9631608")
