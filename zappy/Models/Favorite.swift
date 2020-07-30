@@ -5,5 +5,5 @@
 
 struct Favourite: Codable {
   var location: Location
-  var forecast: Forecast
+  var forecastPeriod: ForecastPeriod
 }

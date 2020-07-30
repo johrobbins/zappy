@@ -5,7 +5,7 @@
 
 import UIKit
 
-class LocationListTableViewController: UITableViewController {
+class LocationSelectorViewController: UITableViewController {
   private var locations = [Location]()
 
   override func viewDidLoad() {
@@ -37,10 +37,10 @@ class LocationListTableViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "SelectForecast",
-    let forecastViewController = segue.destination as? ForecastListTableViewController {
+    let forecastSelectorViewController = segue.destination as? ForecastSelectorViewController {
       let indexPath = tableView.indexPathForSelectedRow!
       let location = locations[indexPath.row]
-      forecastViewController.location = location
+      forecastSelectorViewController.location = location
     }
   }
 }

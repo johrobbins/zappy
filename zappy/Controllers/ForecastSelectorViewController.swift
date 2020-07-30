@@ -5,25 +5,25 @@
 
 import UIKit
 
-class ForecastListTableViewController: UITableViewController {
+class ForecastSelectorViewController: UITableViewController {
   var location: Location?
 
   // MARK: - Table View Functions
 
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let forecast: Forecast
+    let forecastPeriod: ForecastPeriod
 
     switch indexPath.row {
       case 0:
-        forecast = Forecast.current
+        forecastPeriod = ForecastPeriod.current
       case 1:
-        forecast = Forecast.twentyFourHour
+        forecastPeriod = ForecastPeriod.twentyFourHour
       case 2:
-        forecast = Forecast.sevenDay
+        forecastPeriod = ForecastPeriod.sevenDay
     default:
       return
     }
-    performSegue(withIdentifier: "ShowForecast", sender: forecast)
+    performSegue(withIdentifier: "ShowForecast", sender: forecastPeriod)
   }
 
   // MARK: - Segue Handler
@@ -31,16 +31,16 @@ class ForecastListTableViewController: UITableViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "ShowForecast",
     let forecastViewController = segue.destination as? ForecastViewController {
-      let forecast = sender as! Forecast
-      forecastViewController.forecast = forecast
+      let forecastPeriod = sender as! ForecastPeriod
+      forecastViewController.forecastPeriod = forecastPeriod
       forecastViewController.location = location
     }
 
     if segue.identifier == "ShowForecast",
     let navigationController = segue.destination as? UINavigationController,
     let forecastViewController = navigationController.topViewController as? ForecastViewController {
-      let forecast = sender as! Forecast
-      forecastViewController.forecast = forecast
+      let forecastPeriod = sender as! ForecastPeriod
+      forecastViewController.forecastPeriod = forecastPeriod
       forecastViewController.location = location
     }
   }

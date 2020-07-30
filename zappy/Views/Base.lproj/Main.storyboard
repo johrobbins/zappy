@@ -10,7 +10,7 @@
         <!--Location-->
         <scene sceneID="HEN-Oa-s1Q">
             <objects>
-                <tableViewController id="pnZ-I4-Quy" userLabel="Location" customClass="LocationListTableViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pnZ-I4-Quy" userLabel="Location" customClass="LocationSelectorViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iec-oh-f58">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
         <!--Select a forecast-->
         <scene sceneID="I5s-qe-UgA">
             <objects>
-                <tableViewController id="jrg-dI-zel" customClass="ForecastListTableViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jrg-dI-zel" customClass="ForecastSelectorViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2tN-f3-NPb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

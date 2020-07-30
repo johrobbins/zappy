@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "ForecastNavigationController") as! UINavigationController
         let forecastViewController = navigationController.topViewController as? ForecastViewController
         forecastViewController?.location = favorite.location
-        forecastViewController?.forecast = favorite.forecast
+        forecastViewController?.forecastPeriod = favorite.forecastPeriod
         forecastViewController?.isFavourited = true
         window.rootViewController = navigationController
       } else {

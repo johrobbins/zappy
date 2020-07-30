@@ -9,7 +9,7 @@ class ForecastViewController: UIViewController {
   @IBOutlet weak var favouriteBarButtonItem: UIBarButtonItem!
   @IBOutlet private var cityLabel: UILabel!
 
-  var forecast: Forecast?
+  var forecastPeriod: ForecastPeriod?
   var location: Location?
   var isFavourited = false;
 
@@ -25,8 +25,8 @@ class ForecastViewController: UIViewController {
     isFavourited.toggle()
     animateFavouriteIcon(isFavourited)
     if isFavourited {
-      guard let location = location, let forecast = forecast else { return }
-      let favourite = Favourite(location: location, forecast: forecast)
+      guard let location = location, let forecastPeriod = forecastPeriod else { return }
+      let favourite = Favourite(location: location, forecastPeriod: forecastPeriod)
       userPreferences.saveFavourite(with: favourite)
     } else {
       userPreferences.removeFavourite()
@@ -34,7 +34,7 @@ class ForecastViewController: UIViewController {
   }
 
   private func setupUI() {
-    navigationItem.title = forecast?.rawValue
+    navigationItem.title = forecastPeriod?.rawValue
     animateFavouriteIcon(isFavourited)
 
     guard let location = location else { return }
