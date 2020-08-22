@@ -141,11 +141,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lnm-Le-jK1" customClass="CurrentWeatherView" customModule="zappy" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="141" width="414" height="333"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="trailing" secondItem="Lnm-Le-jK1" secondAttribute="trailing" id="GBn-Ap-msC"/>
                             <constraint firstItem="n7s-L8-SZ4" firstAttribute="top" secondItem="h8u-Lp-Uyr" secondAttribute="top" constant="20" id="HyI-nj-QUX"/>
                             <constraint firstItem="n7s-L8-SZ4" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" constant="20" id="SFY-OF-FVv"/>
+                            <constraint firstItem="Lnm-Le-jK1" firstAttribute="top" secondItem="n7s-L8-SZ4" secondAttribute="bottom" id="Ti5-yA-UcG"/>
+                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="bottom" secondItem="Lnm-Le-jK1" secondAttribute="bottom" constant="388" id="UtL-2Z-6mk"/>
+                            <constraint firstItem="Lnm-Le-jK1" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" id="WSq-vM-Sg3"/>
                             <constraint firstItem="h8u-Lp-Uyr" firstAttribute="trailing" secondItem="n7s-L8-SZ4" secondAttribute="trailing" constant="20" id="v1k-1a-2TM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h8u-Lp-Uyr"/>
@@ -165,6 +173,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="n7s-L8-SZ4" id="bXK-UA-cqI"/>
                         <outlet property="favouriteBarButtonItem" destination="Nut-zM-GPz" id="aQ3-4j-kR5"/>
+                        <outlet property="weatherView" destination="Lnm-Le-jK1" id="pdX-kb-gpa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOZ-9f-wDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

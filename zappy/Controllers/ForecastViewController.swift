@@ -6,8 +6,10 @@
 import UIKit
 
 class ForecastViewController: UIViewController {
-  @IBOutlet weak var favouriteBarButtonItem: UIBarButtonItem!
+  @IBOutlet private var favouriteBarButtonItem: UIBarButtonItem!
   @IBOutlet private var cityLabel: UILabel!
+
+  @IBOutlet private var weatherView: CurrentWeatherView!
 
   var forecastPeriod: ForecastPeriod?
   var location: Location?
@@ -15,10 +17,10 @@ class ForecastViewController: UIViewController {
 
   private let userPreferences = UserPreferences()
 
-
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
+    weatherView.configure(temp: "18")
   }
 
   @IBAction func toggleFavourite(_ sender: UIBarButtonItem) {
