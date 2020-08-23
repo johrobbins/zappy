@@ -5,7 +5,7 @@
 
 import UIKit
 
-class ForecastViewController: UIViewController {
+class WeatherViewController: UIViewController {
   @IBOutlet private var favouriteBarButtonItem: UIBarButtonItem!
   @IBOutlet private var cityLabel: UILabel!
 

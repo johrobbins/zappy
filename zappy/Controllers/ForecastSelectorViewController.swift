@@ -30,7 +30,7 @@ class ForecastSelectorViewController: UITableViewController {
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "ShowForecast",
-    let forecastViewController = segue.destination as? ForecastViewController {
+    let forecastViewController = segue.destination as? WeatherViewController {
       let forecastPeriod = sender as! ForecastPeriod
       forecastViewController.forecastPeriod = forecastPeriod
       forecastViewController.location = location
@@ -38,7 +38,7 @@ class ForecastSelectorViewController: UITableViewController {
 
     if segue.identifier == "ShowForecast",
     let navigationController = segue.destination as? UINavigationController,
-    let forecastViewController = navigationController.topViewController as? ForecastViewController {
+    let forecastViewController = navigationController.topViewController as? WeatherViewController {
       let forecastPeriod = sender as! ForecastPeriod
       forecastViewController.forecastPeriod = forecastPeriod
       forecastViewController.location = location

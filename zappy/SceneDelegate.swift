@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       if let favorite = userPreferences.loadFavourite() {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "ForecastNavigationController") as! UINavigationController
-        let forecastViewController = navigationController.topViewController as? ForecastViewController
+        let forecastViewController = navigationController.topViewController as? WeatherViewController
         forecastViewController?.location = favorite.location
         forecastViewController?.forecastPeriod = favorite.forecastPeriod
         forecastViewController?.isFavourited = true
