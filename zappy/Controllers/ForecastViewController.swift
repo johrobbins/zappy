@@ -12,15 +12,31 @@ class ForecastViewController: UIViewController {
   @IBOutlet private var weatherView: CurrentWeatherView!
 
   var forecastPeriod: ForecastPeriod?
-  var location: Location?
+  var location: Location!
   var isFavourited = false;
-
+    
   private let userPreferences = UserPreferences()
+    private let weatherService = APIService()
+    private var weather: Weather?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setupUI()
     weatherView.configure(temp: "18")
+
+    weatherService.getWeather(for: location) { result in
+        DispatchQueue.main.async {
+            //self.weather = weather
+            //self.updateUI()
+            switch result {
+            case .success(let weather):
+                self.weather = weather
+                print(weather)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
   }
 
   @IBAction func toggleFavourite(_ sender: UIBarButtonItem) {
