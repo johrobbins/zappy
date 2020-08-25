@@ -35,7 +35,7 @@ class CurrentWeatherView: UIView {
   func configure(_ currentWeather: CurrentWeather) {
     summaryLabel.text = currentWeather.summary
     currentTempatureLabel.text = String(format: "%.1f", currentWeather.temperature)
-    //feelsLikeTempatureLabel.text = // TODO: retrive this from API
-    //iconImageView.image = // TODO: convert icon name to local image
+    feelsLikeTempatureLabel.text = String(format: "Feels like %.1f", currentWeather.apparentTemperature)
+    iconImageView.image = UIImage(named: currentWeather.icon)
   }
 }

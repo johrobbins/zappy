@@ -7,6 +7,7 @@ struct CurrentWeather: Decodable {
     var summary: String
     var icon: String
     var temperature: Float
+    var apparentTemperature: Float
     var windBearing: Int
     var windSpeed: Float
 }

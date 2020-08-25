@@ -46,11 +46,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like 23.2°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf3-eR-MMm" userLabel="FeelsLikeTempLabel">
-                                    <rect key="frame" x="52.5" y="110.5" width="125" height="21.5"/>
+                                    <rect key="frame" x="52.5" y="111.5" width="125" height="19.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="125" id="iS4-Tw-RPV"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                     <color key="textColor" name="text"/>
                                     <nil key="highlightedColor"/>
                                 </label>
