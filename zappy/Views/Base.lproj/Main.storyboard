@@ -121,23 +121,57 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Select a forecast" id="1Wr-dY-Xmx"/>
                     <connections>
-                        <segue destination="f54-6j-n4j" kind="presentation" identifier="ShowForecast" modalPresentationStyle="fullScreen" id="rWH-6S-wC0"/>
+                        <segue destination="n70-uV-qZ2" kind="show" identifier="ShowCurrentWeather" id="uYi-FU-QrS"/>
+                        <segue destination="bow-LD-iGz" kind="show" identifier="ShowTwentyFourHourWeather" id="9mp-Te-RjW"/>
+                        <segue destination="oCS-v9-PBx" kind="show" identifier="ShowSevenDayWeather" id="pNC-Xj-jKJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAN-Er-MCB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="946" y="78"/>
         </scene>
+        <!--Twenty Four Hour Weather View Controller-->
+        <scene sceneID="dJP-0U-phH">
+            <objects>
+                <viewController id="bow-LD-iGz" customClass="TwentyFourHourWeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yt0-fg-XZg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mEh-Yf-2dC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zo8-l2-HnW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWJ-3Z-Wix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="78"/>
+        </scene>
+        <!--Seven Day Weather View Controller-->
+        <scene sceneID="6gn-xN-dKv">
+            <objects>
+                <viewController id="oCS-v9-PBx" customClass="SevenDayWeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mab-AU-MA4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="efL-GZ-tSb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xcs-W7-ewd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hU-29-t1e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797" y="804"/>
+        </scene>
         <!--Current weather-->
         <scene sceneID="VFo-TH-9cg">
             <objects>
-                <viewController storyboardIdentifier="ForecastViewController" id="n70-uV-qZ2" customClass="WeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForecastViewController" id="n70-uV-qZ2" customClass="CurrentWeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oes-y0-a8a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melbourne" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-L8-SZ4" userLabel="CityLabel">
-                                <rect key="frame" x="20" y="108" width="374" height="33.5"/>
+                                <rect key="frame" x="20" y="20" width="374" height="33.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33.5" id="skx-2b-iG9"/>
                                 </constraints>
@@ -146,7 +180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-4i-AwP" userLabel="ContentStackView">
-                                <rect key="frame" x="0.0" y="141.5" width="414" height="719.5"/>
+                                <rect key="frame" x="0.0" y="53.5" width="414" height="753.5"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="primary"/>
@@ -181,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oOZ-9f-wDt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="78"/>
+            <point key="canvasLocation" x="1722" y="-649"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tYx-Xg-fKT">
@@ -197,30 +231,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuf-HD-z7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-662" y="804"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="g9d-Vb-VL4">
-            <objects>
-                <navigationController storyboardIdentifier="ForecastNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="f54-6j-n4j" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Rhr-7D-Swl"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OaQ-40-34H">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="n70-uV-qZ2" kind="relationship" relationship="rootViewController" id="gDg-cy-adp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nmC-x8-BdR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1708.6956521739132" y="77.678571428571431"/>
+            <point key="canvasLocation" x="-633" y="78"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N75-Xi-7Lh"/>
+        <segue reference="uYi-FU-QrS"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="line.horizontal.3" catalog="system" width="128" height="64"/>

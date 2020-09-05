@@ -6,42 +6,38 @@
 import UIKit
 
 class ForecastSelectorViewController: UITableViewController {
-  var location: Location?
+    var location: Location?
 
-  // MARK: - Table View Functions
+    // MARK: - Table View Functions
 
-  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let forecastPeriod: ForecastPeriod
-
-    switch indexPath.row {
-      case 0:
-        forecastPeriod = ForecastPeriod.current
-      case 1:
-        forecastPeriod = ForecastPeriod.twentyFourHour
-      case 2:
-        forecastPeriod = ForecastPeriod.sevenDay
-    default:
-      return
-    }
-    performSegue(withIdentifier: "ShowForecast", sender: forecastPeriod)
-  }
-
-  // MARK: - Segue Handler
-
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "ShowForecast",
-    let forecastViewController = segue.destination as? WeatherViewController {
-      let forecastPeriod = sender as! ForecastPeriod
-      forecastViewController.forecastPeriod = forecastPeriod
-      forecastViewController.location = location
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: "ShowCurrentWeather", sender: ForecastPeriod.current)
+        case 1:
+            performSegue(withIdentifier: "ShowTwentyFourHourWeather", sender: ForecastPeriod.twentyFourHour)
+        case 2:
+            performSegue(withIdentifier: "ShowSevenDayWeather", sender: ForecastPeriod.sevenDay)
+        default:
+            return
+        }
     }
 
-    if segue.identifier == "ShowForecast",
-    let navigationController = segue.destination as? UINavigationController,
-    let forecastViewController = navigationController.topViewController as? WeatherViewController {
-      let forecastPeriod = sender as! ForecastPeriod
-      forecastViewController.forecastPeriod = forecastPeriod
-      forecastViewController.location = location
+    // MARK: - Segue Handler
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCurrentWeather" {
+            let currentWeatherViewController = segue.destination as! CurrentWeatherViewController
+            currentWeatherViewController.forecastPeriod = ForecastPeriod.current
+            currentWeatherViewController.location = location
+        } else if segue.identifier == "ShowTwentyFourHourWeather"  {
+            let currentWeatherViewController = segue.destination as! TwentyFourHourWeatherViewController
+            currentWeatherViewController.forecastPeriod = ForecastPeriod.twentyFourHour
+            currentWeatherViewController.location = location
+        } else if segue.identifier == "ShowSevenDayWeather"  {
+            let currentWeatherViewController = segue.destination as! SevenDayWeatherViewController
+            currentWeatherViewController.forecastPeriod = ForecastPeriod.sevenDay
+            currentWeatherViewController.location = location
+        }
     }
-  }
 }

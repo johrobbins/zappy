@@ -5,7 +5,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class CurrentWeatherViewController: UIViewController {
   @IBOutlet private var favouriteBarButtonItem: UIBarButtonItem!
   @IBOutlet private var cityLabel: UILabel!
   @IBOutlet private var contentStackView: UIStackView!

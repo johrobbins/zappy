@@ -25,17 +25,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       let userPreferences = UserPreferences()
 
-      if let favorite = userPreferences.loadFavourite() {
-        let navigationController = storyboard.instantiateViewController(withIdentifier: "ForecastNavigationController") as! UINavigationController
-        let forecastViewController = navigationController.topViewController as? WeatherViewController
-        forecastViewController?.location = favorite.location
-        forecastViewController?.forecastPeriod = favorite.forecastPeriod
-        forecastViewController?.isFavourited = true
-        window.rootViewController = navigationController
-      } else {
+//      if let favorite = userPreferences.loadFavourite() {
+//        let navigationController = storyboard.instantiateViewController(withIdentifier: "ForecastNavigationController") as! UINavigationController
+//        let forecastViewController = navigationController.topViewController as? WeatherViewController
+//        forecastViewController?.location = favorite.location
+//        forecastViewController?.forecastPeriod = favorite.forecastPeriod
+//        forecastViewController?.isFavourited = true
+//        window.rootViewController = navigationController
+//      } else {
         let navigationController = storyboard.instantiateViewController(withIdentifier: "InitialNavigationController") as! UINavigationController
         window.rootViewController = navigationController
-      }
+     // }
 
       self.window = window
       window.makeKeyAndVisible()
