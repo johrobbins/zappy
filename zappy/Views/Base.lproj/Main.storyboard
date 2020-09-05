@@ -11,7 +11,7 @@
         <!--Location-->
         <scene sceneID="HEN-Oa-s1Q">
             <objects>
-                <tableViewController id="pnZ-I4-Quy" userLabel="Location" customClass="LocationSelectorViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pnZ-I4-Quy" userLabel="Location" customClass="LocationSelectorViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Iec-oh-f58">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,7 @@
         <!--Select a forecast-->
         <scene sceneID="I5s-qe-UgA">
             <objects>
-                <tableViewController id="jrg-dI-zel" customClass="ForecastSelectorViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="jrg-dI-zel" customClass="ForecastSelectorViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2tN-f3-NPb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,7 +131,7 @@
         <!--Current weather-->
         <scene sceneID="VFo-TH-9cg">
             <objects>
-                <viewController storyboardIdentifier="ForecastViewController" id="n70-uV-qZ2" customClass="WeatherViewController" customModule="zappy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForecastViewController" id="n70-uV-qZ2" customClass="WeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oes-y0-a8a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

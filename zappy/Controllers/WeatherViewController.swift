@@ -27,8 +27,8 @@ class WeatherViewController: UIViewController {
         case .success(let weather):
           let currentWeatherView = CurrentWeatherView(frame: CGRect(x: 0, y: 0, width: self.contentStackView.frame.width, height: 200))
           self.contentStackView.addSubview(currentWeatherView)
-
           currentWeatherView.configure(weather.currently)
+
         case .failure(let error):
             print(error)
         }
