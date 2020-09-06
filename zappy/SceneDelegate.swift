@@ -12,6 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    private let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -21,30 +23,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             let userPreferences = UserPreferences()
 
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let navigationController = storyboard.instantiateViewController(withIdentifier: "InitialNavigationController") as! UINavigationController
 
-            if let favorite = userPreferences.loadFavourite() {
+            if let favourite = userPreferences.loadFavourite() {
+                var viewControllerStack: [UIViewController] = [
+                    storyboard.instantiateViewController(withIdentifier: "LocationSelectorViewController") as! LocationSelectorViewController,
+                    storyboard.instantiateViewController(withIdentifier: "ForecastSelectorViewController") as! ForecastSelectorViewController
+                ]
 
-                let currentWeatherViewController = storyboard.instantiateViewController(withIdentifier: "CurrentWeatherViewController") as! CurrentWeatherViewController
-                currentWeatherViewController.location = favorite.location
-                currentWeatherViewController.forecastPeriod = favorite.forecastPeriod
-                currentWeatherViewController.isFavourited = true
+                switch favourite.forecastPeriod {
+                case .current:
+                    let currentWeatherViewController = CurrentWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
+                    viewControllerStack.append(currentWeatherViewController)
+                case .twentyFourHour:
+                    let twentyFourHourWeatherViewController = TwentyFourHourWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
+                    viewControllerStack.append(twentyFourHourWeatherViewController)
+                case .sevenDay:
+                    let sevenDayWeatherViewController = SevenDayWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
+                    viewControllerStack.append(sevenDayWeatherViewController)
+                }
 
-                navigationController.setViewControllers([
-                    //storyboard.instantiateViewController(withIdentifier: "LocationSelectorViewController") as! LocationSelectorViewController,
-                    storyboard.instantiateViewController(withIdentifier: "ForecastSelectorViewController") as! ForecastSelectorViewController,
-                    currentWeatherViewController
-                ], animated: false)
-
-//                switch favorite.forecastPeriod {
-//                case .current:
-//                    //code
-//                case .twentyFourHour:
-//                    //code
-//                case .sevenDay:
-//                    //code
-//                }
+                navigationController.setViewControllers(viewControllerStack, animated: false)
             }
 
             window.rootViewController = navigationController

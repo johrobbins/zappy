@@ -5,17 +5,15 @@
 
 import UIKit
 
-class CurrentWeatherViewController: UIViewController {
-    @IBOutlet private var favouriteBarButtonItem: UIBarButtonItem!
+class CurrentWeatherViewController: WeatherViewController {
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var contentStackView: UIStackView!
 
-    var forecastPeriod: ForecastPeriod?
-    var location: Location!
-    var isFavourited = false;
-
-    private let userPreferences = UserPreferences()
-    private let weatherService = APIService()
+    static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> CurrentWeatherViewController {
+        let currentWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CurrentWeatherViewController") as! CurrentWeatherViewController
+        currentWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)
+        return currentWeatherViewController
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,34 +35,11 @@ class CurrentWeatherViewController: UIViewController {
     }
 
     @IBAction func backButtonTapped(_ sender: Any) {
-      returnToForecastSelector(for: location)
-    }
-
-    @IBAction func toggleFavourite(_ sender: UIBarButtonItem) {
-        isFavourited.toggle()
-        animateFavouriteIcon(isFavourited)
-        if isFavourited {
-            guard let location = location, let forecastPeriod = forecastPeriod else { return }
-            let favourite = Favourite(location: location, forecastPeriod: forecastPeriod)
-            userPreferences.saveFavourite(with: favourite)
-        } else {
-            userPreferences.removeFavourite()
-        }
+        returnToForecastSelector(for: location)
     }
 
     private func setupUI() {
-        animateFavouriteIcon(isFavourited)
-
         guard let location = location else { return }
         cityLabel.text = location.city
     }
-
-    private func animateFavouriteIcon(_ fill: Bool) {
-        if fill {
-            favouriteBarButtonItem.image = UIImage(systemName: "star.fill")
-        } else {
-            favouriteBarButtonItem.image = UIImage(systemName: "star")
-        }
-    }
 }
-

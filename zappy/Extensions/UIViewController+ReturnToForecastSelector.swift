@@ -8,10 +8,10 @@ import UIKit
 extension UIViewController {
     func returnToForecastSelector(for location: Location) {
         if let navigationController = self.navigationController {
-          navigationController.popViewController(animated: true)
+            navigationController.popViewController(animated: true)
 
-          let forecastSelectorViewController =  navigationController.topViewController as! ForecastSelectorViewController
-          forecastSelectorViewController.location = location
+            let forecastSelectorViewController =  navigationController.topViewController as! ForecastSelectorViewController
+            forecastSelectorViewController.configure(location: location)
         }
     }
 }

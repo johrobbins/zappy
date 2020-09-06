@@ -1,12 +1,9 @@
 //
-//  Location.swift
-//  zappy
-//
 //  Created by Joh Robbins on 23/7/20.
 //  Copyright © 2020 Joh Robbins. All rights reserved.
 //
 
-struct Location: Codable {
+struct Location: Codable, Equatable {
   var city: String
   var state: String
   var latitude: String

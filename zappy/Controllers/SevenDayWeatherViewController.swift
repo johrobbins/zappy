@@ -5,7 +5,10 @@
 
 import UIKit
 
-class SevenDayWeatherViewController: UIViewController {
-    var forecastPeriod: ForecastPeriod?
-    var location: Location?
+class SevenDayWeatherViewController: WeatherViewController {
+    static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> SevenDayWeatherViewController {
+        let sevenDayWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SevenDayWeatherViewController") as! SevenDayWeatherViewController
+        sevenDayWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)
+        return sevenDayWeatherViewController
+    }
 }
