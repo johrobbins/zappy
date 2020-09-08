@@ -5,7 +5,7 @@
 
 import UIKit
 
-class TwentyFourHourWeatherViewController: WeatherViewController {
+class TwentyFourHourWeatherViewController: BaseWeatherViewController {
     static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> TwentyFourHourWeatherViewController {
         let twentyFourHourWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TwentyFourHourWeatherViewController") as! TwentyFourHourWeatherViewController
         twentyFourHourWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)

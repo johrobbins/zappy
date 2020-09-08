@@ -5,7 +5,7 @@
 
 import UIKit
 
-class CurrentWeatherViewController: WeatherViewController {
+class CurrentWeatherViewController: BaseWeatherViewController {
     @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var contentStackView: UIStackView!
 

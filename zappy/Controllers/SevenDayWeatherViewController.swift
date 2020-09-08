@@ -5,10 +5,14 @@
 
 import UIKit
 
-class SevenDayWeatherViewController: WeatherViewController {
+class SevenDayWeatherViewController: BaseWeatherViewController {
     static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> SevenDayWeatherViewController {
         let sevenDayWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SevenDayWeatherViewController") as! SevenDayWeatherViewController
         sevenDayWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)
         return sevenDayWeatherViewController
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
 }

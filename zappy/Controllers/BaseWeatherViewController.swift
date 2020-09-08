@@ -5,7 +5,7 @@
 
 import UIKit
 
-class WeatherViewController: UIViewController {
+class BaseWeatherViewController: UIViewController {
     var location: Location!
     var forecastPeriod: ForecastPeriod!
 
@@ -39,7 +39,7 @@ class WeatherViewController: UIViewController {
             isFavourited = favourite.location == location && favourite.forecastPeriod == forecastPeriod ? true : false
         }
 
-        let favouriteIcon = isFavourited ? WeatherViewController.starFill : WeatherViewController.star
+        let favouriteIcon = isFavourited ? BaseWeatherViewController.starFill : BaseWeatherViewController.star
         let favouriteButton = UIBarButtonItem.init(image: favouriteIcon, style: .plain, target: self, action: #selector(toggleFavourite))
         navigationItem.rightBarButtonItem = favouriteButton
     }
@@ -48,12 +48,12 @@ class WeatherViewController: UIViewController {
         isFavourited.toggle()
 
         if isFavourited {
-            navigationItem.rightBarButtonItem?.image = WeatherViewController.starFill
+            navigationItem.rightBarButtonItem?.image = BaseWeatherViewController.starFill
             guard let location = location, let forecastPeriod = forecastPeriod else { return }
             let favourite = Favourite(location: location, forecastPeriod: forecastPeriod)
             userPreferences.saveFavourite(with: favourite)
         } else {
-            navigationItem.rightBarButtonItem?.image = WeatherViewController.star
+            navigationItem.rightBarButtonItem?.image = BaseWeatherViewController.star
             userPreferences.removeFavourite()
         }
     }
