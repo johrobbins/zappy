@@ -130,7 +130,7 @@
             </objects>
             <point key="canvasLocation" x="946" y="78"/>
         </scene>
-        <!--Twenty Four Hour Weather View Controller-->
+        <!--24-hour forecast-->
         <scene sceneID="dJP-0U-phH">
             <objects>
                 <viewController storyboardIdentifier="TwentyFourHourWeatherViewController" id="bow-LD-iGz" customClass="TwentyFourHourWeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
@@ -140,13 +140,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mEh-Yf-2dC"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Zo8-l2-HnW"/>
+                    <navigationItem key="navigationItem" title="24-hour forecast" id="Zo8-l2-HnW">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="AQF-pv-6Fe"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="3xm-7j-x1d"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nWJ-3Z-Wix" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1797" y="78"/>
         </scene>
-        <!--Seven Day Weather View Controller-->
+        <!--7-day forecast-->
         <scene sceneID="6gn-xN-dKv">
             <objects>
                 <viewController storyboardIdentifier="SevenDayWeatherViewController" id="oCS-v9-PBx" customClass="SevenDayWeatherViewController" customModule="Zappy" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,7 +159,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="efL-GZ-tSb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Xcs-W7-ewd"/>
+                    <navigationItem key="navigationItem" title="7-day forecast" id="Xcs-W7-ewd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="FIT-a8-D0L"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="a60-OB-gbk"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hU-29-t1e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,11 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="h8u-Lp-Uyr"/>
                     </view>
                     <navigationItem key="navigationItem" title="Current weather" id="hc2-6j-qFH">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" style="done" id="iKh-Dp-f7P">
-                            <connections>
-                                <action selector="backButtonTapped:" destination="n70-uV-qZ2" id="KWQ-cV-K7d"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" style="done" id="iKh-Dp-f7P"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="Nut-zM-GPz"/>
                     </navigationItem>
                     <connections>

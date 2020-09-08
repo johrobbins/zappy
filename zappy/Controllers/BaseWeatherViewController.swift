@@ -31,20 +31,36 @@ class BaseWeatherViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createFavouriteBarButtonItem()
+
+        isFavouriteView()
+        setupNavigationBarItems()
     }
 
-    func createFavouriteBarButtonItem() {
+    func setupNavigationBarItems() {
+        let forecastSelectorBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(navigateToForecastSelector))
+        navigationItem.leftBarButtonItem = forecastSelectorBarButtonItem
+
+        let favouriteIcon = isFavourited ? BaseWeatherViewController.starFill : BaseWeatherViewController.star
+        let favouriteBarButtonItem = UIBarButtonItem.init(image: favouriteIcon, style: .plain, target: self, action: #selector(toggleFavourite))
+        navigationItem.rightBarButtonItem = favouriteBarButtonItem
+    }
+    
+    func isFavouriteView() {
         if let favourite = userPreferences.loadFavourite() {
             isFavourited = favourite.location == location && favourite.forecastPeriod == forecastPeriod ? true : false
         }
-
-        let favouriteIcon = isFavourited ? BaseWeatherViewController.starFill : BaseWeatherViewController.star
-        let favouriteButton = UIBarButtonItem.init(image: favouriteIcon, style: .plain, target: self, action: #selector(toggleFavourite))
-        navigationItem.rightBarButtonItem = favouriteButton
     }
 
-    @objc func toggleFavourite(){
+    @objc func navigateToForecastSelector() {
+        if let navigationController = self.navigationController {
+            navigationController.popViewController(animated: true)
+
+            let forecastSelectorViewController =  navigationController.topViewController as! ForecastSelectorViewController
+            forecastSelectorViewController.configure(location: location)
+        }
+    }
+
+    @objc func toggleFavourite() {
         isFavourited.toggle()
 
         if isFavourited {

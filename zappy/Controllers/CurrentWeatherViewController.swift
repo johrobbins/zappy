@@ -34,10 +34,6 @@ class CurrentWeatherViewController: BaseWeatherViewController {
         }
     }
 
-    @IBAction func backButtonTapped(_ sender: Any) {
-        returnToForecastSelector(for: location)
-    }
-
     private func setupUI() {
         guard let location = location else { return }
         cityLabel.text = location.city
