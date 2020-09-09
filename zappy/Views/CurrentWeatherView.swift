@@ -32,7 +32,7 @@ class CurrentWeatherView: UIView {
     contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
   }
 
-  func configure(_ currentWeather: CurrentWeather) {
+  func configure(_ currentWeather: Current) {
     summaryLabel.text = currentWeather.summary
     currentTempatureLabel.text = String(format: "%.1f", currentWeather.temperature)
     feelsLikeTempatureLabel.text = String(format: "Feels like %.1f", currentWeather.apparentTemperature)

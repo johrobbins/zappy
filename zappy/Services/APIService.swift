@@ -24,7 +24,7 @@ class APIService {
         components.scheme = "https"
         components.host = "api.darksky.net"
         components.path = "/forecast/\(darkWeatherAPIKey)/\(location.latitude),\(location.longitude)"
-        components.queryItems = [URLQueryItem(name: "exclude", value: "minutely,hourly,daily,flags"),
+        components.queryItems = [URLQueryItem(name: "exclude", value: "minutely,hourly,flags"), //daily
                                  URLQueryItem(name: "units", value: "auto")]
 
         guard let url = components.url else {

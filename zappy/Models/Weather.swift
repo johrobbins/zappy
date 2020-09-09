@@ -4,5 +4,30 @@
 //
 
 struct Weather: Decodable {
-    var currently: CurrentWeather
+    var timezone: String
+    var currently: Current
+    var daily: Daily
+}
+
+struct Current: Decodable {
+    var summary: String
+    var icon: String
+    var temperature: Double
+    var apparentTemperature: Double
+    var windBearing: Int
+    var windSpeed: Double
+}
+
+struct Daily: Decodable {
+    var data: [CurrentDay]
+}
+
+struct CurrentDay: Decodable {
+    var time: Double
+    var summary: String
+    var icon: String
+    var temperatureMax: Double
+    var temperatureMin: Double
+    var windBearing: Int
+    var windSpeed: Double
 }
