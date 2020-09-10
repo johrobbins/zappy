@@ -7,25 +7,39 @@ import UIKit
 
 class DailyForecastTableViewCell: UITableViewCell {
     @IBOutlet private var weatherIconImageView: UIImageView!
-    @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var tempatureLabel: UILabel!
     @IBOutlet var windDirectionLabel: UILabel!
 
     func configure(currentDay: CurrentDay, timezone: String) {
         weatherIconImageView.image = UIImage(named: currentDay.icon)
-        dayLabel.text = "Monday"
+        dateLabel.text = formatDate(time: currentDay.time, timezone: timezone)
         descriptionLabel.text = currentDay.summary
+        tempatureLabel.attributedText = createStyledTempatureText(min: Int(currentDay.temperatureMin), max: Int(currentDay.temperatureMax))
 
-        let tempatureMin = Int(currentDay.temperatureMin)
-        let tempatureMax = Int(currentDay.temperatureMax)
-        tempatureLabel.text = "\(tempatureMin)°C - \(tempatureMax)°C"
+        // If windSpeed is zero, then Wind Bearing value will not be defined
+        let windCompassDirection = currentDay.windSpeed == 0 ? "" : WindDirection().convertToCompassDirection(degree: currentDay.windBearing)
+        windDirectionLabel.text = "\(Int(currentDay.windSpeed)) km/h \(windCompassDirection)"
+    }
 
-        let date = Date(timeIntervalSince1970: currentDay.time)
+    private func createStyledTempatureText(min: Int, max: Int) -> NSMutableAttributedString {
+        let attributedString = NSMutableAttributedString(string: "\(min)°", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)])
+        attributedString.append(NSMutableAttributedString(string:"  -  "))
+        attributedString.append(NSMutableAttributedString(string: "\(max)°", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15)]))
+
+        return attributedString
+    }
+
+    private func formatDate(time: Double, timezone: String) -> String {
+        let date = Date(timeIntervalSince1970: time)
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = TimeZone(abbreviation: timezone)
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "EEEE" //Specify your format that you want
-        dayLabel.text = dateFormatter.string(from: date)
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .ordinal
+
+        dateFormatter.dateFormat = "EEEE, MMM d"
+        return dateFormatter.string(from: date)
     }
 }

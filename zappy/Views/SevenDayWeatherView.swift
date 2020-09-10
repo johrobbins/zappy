@@ -33,6 +33,8 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
     func configure(_ weather: Weather) {
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorInset = .zero
+        tableView.layoutMargins = .zero
 
         tableView.register(UINib(nibName: String(describing: DailyForecastTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DailyForecastTableViewCell.self))
 
@@ -47,6 +49,7 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DailyForecastTableViewCell.self), for: indexPath) as! DailyForecastTableViewCell
 
+        //TODO: remove weather?.daily.data[0] as this is current day
         if let currentDay = weather?.daily.data, let timezone = weather?.timezone {
             cell.configure(currentDay: currentDay[indexPath.row], timezone: timezone)
             return cell

@@ -10,6 +10,7 @@
 		FF33395F2509F0A60074299B /* SevenDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */; };
 		FF3339612509F0EA0074299B /* SevenDayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */; };
 		FF3339632509FDFE0074299B /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */; };
+		FF333965250A38770074299B /* WindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF333964250A38770074299B /* WindDirection.swift */; };
 		FF48B1C524F0ECB500AE0B4E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C424F0ECB500AE0B4E /* APIService.swift */; };
 		FF48B1C724F0EF5600AE0B4E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C624F0EF5600AE0B4E /* Weather.swift */; };
 		FF48B1CB24F1449900AE0B4E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1CA24F1449900AE0B4E /* Config.swift */; };
@@ -37,6 +38,7 @@
 		FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDayWeatherView.swift; sourceTree = "<group>"; };
 		FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenDayWeatherView.xib; sourceTree = "<group>"; };
 		FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
+		FF333964250A38770074299B /* WindDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDirection.swift; sourceTree = "<group>"; };
 		FF48B1C424F0ECB500AE0B4E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FF48B1C624F0EF5600AE0B4E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FF48B1CA24F1449900AE0B4E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				FFE4167524CD89EA00675C87 /* UserPreferences.swift */,
 				FF48B1C424F0ECB500AE0B4E /* APIService.swift */,
 				FF48B1CA24F1449900AE0B4E /* Config.swift */,
+				FF333964250A38770074299B /* WindDirection.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				FFE4167324CB16B500675C87 /* CurrentWeatherViewController.swift in Sources */,
 				FF5982632504F88C00A7F170 /* BaseWeatherViewController.swift in Sources */,
 				FFE4167824CDB62B00675C87 /* Favorite.swift in Sources */,
+				FF333965250A38770074299B /* WindDirection.swift in Sources */,
 				FFE4167624CD89EB00675C87 /* UserPreferences.swift in Sources */,
 				FF59825C250394E600A7F170 /* TwentyFourHourWeatherViewController.swift in Sources */,
 				FFE4167124CAF99100675C87 /* ForecastSelectorViewController.swift in Sources */,
