@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentWeatherView" customModule="Zappy" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="i5M-Pr-FkT" id="6wK-0H-4SI"/>
+                <outlet property="contentView" destination="i5M-Pr-FkT" id="CXZ-NE-9Tn"/>
                 <outlet property="currentTempatureLabel" destination="Gbh-xk-9Rq" id="Jfa-sT-hbG"/>
                 <outlet property="feelsLikeTempatureLabel" destination="Nf3-eR-MMm" id="Vpy-ZQ-TtM"/>
                 <outlet property="iconImageView" destination="qjV-hl-Q42" id="r94-vk-Ln9"/>
@@ -91,6 +91,7 @@
                 <constraint firstAttribute="trailing" secondItem="AUj-0f-o4e" secondAttribute="trailing" id="Du8-Ge-0Ku"/>
                 <constraint firstItem="AUj-0f-o4e" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="gmO-Of-mZK"/>
                 <constraint firstItem="AUj-0f-o4e" firstAttribute="top" secondItem="4re-Mi-YtC" secondAttribute="bottom" id="hha-MK-W4c"/>
+                <constraint firstAttribute="height" constant="240" id="vhz-Se-aay"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>

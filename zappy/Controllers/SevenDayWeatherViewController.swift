@@ -42,12 +42,12 @@ class SevenDayWeatherViewController: BaseWeatherViewController, UITableViewDataS
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastCell", for: indexPath) as! DailyForecastTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DailyForecastCell", for: indexPath)// as! DailyForecastTableViewCell
 
-        if let currentDay = weather?.daily.data, let timezone = weather?.timezone {
-            cell.configure(currentDay: currentDay[indexPath.row], timezone: timezone)
-            return cell
-        }
+//        if let currentDay = weather?.daily.data, let timezone = weather?.timezone {
+//            cell.configure(currentDay: currentDay[indexPath.row], timezone: timezone)
+//            return cell
+//        }
 
         return cell
     }

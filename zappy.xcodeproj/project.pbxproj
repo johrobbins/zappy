@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF33395F2509F0A60074299B /* SevenDayWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */; };
+		FF3339612509F0EA0074299B /* SevenDayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */; };
+		FF3339632509FDFE0074299B /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */; };
 		FF48B1C524F0ECB500AE0B4E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C424F0ECB500AE0B4E /* APIService.swift */; };
 		FF48B1C724F0EF5600AE0B4E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C624F0EF5600AE0B4E /* Weather.swift */; };
 		FF48B1CB24F1449900AE0B4E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1CA24F1449900AE0B4E /* Config.swift */; };
@@ -27,11 +30,13 @@
 		FFED39D324C722DE003834B8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFED39D124C722DE003834B8 /* Main.storyboard */; };
 		FFED39D524C722E0003834B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFED39D424C722E0003834B8 /* Assets.xcassets */; };
 		FFED39D824C722E0003834B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFED39D624C722E0003834B8 /* LaunchScreen.storyboard */; };
-		FFFE5C7224FA4D0200E3A70A /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFFE5C7024FA4D0200E3A70A /* DailyForecastTableViewCell.swift */; };
-		FFFE5C7324FA4D0200E3A70A /* SevenDayForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFE5C7124FA4D0200E3A70A /* SevenDayForecastTableViewCell.xib */; };
+		FFFE5C7324FA4D0200E3A70A /* DailyForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SevenDayWeatherView.swift; sourceTree = "<group>"; };
+		FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenDayWeatherView.xib; sourceTree = "<group>"; };
+		FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
 		FF48B1C424F0ECB500AE0B4E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FF48B1C624F0EF5600AE0B4E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FF48B1CA24F1449900AE0B4E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -54,8 +59,7 @@
 		FFED39D424C722E0003834B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFED39D724C722E0003834B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFED39D924C722E0003834B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFFE5C7024FA4D0200E3A70A /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
-		FFFE5C7124FA4D0200E3A70A /* SevenDayForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenDayForecastTableViewCell.xib; sourceTree = "<group>"; };
+		FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyForecastTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +92,10 @@
 				FFED39D124C722DE003834B8 /* Main.storyboard */,
 				FF97AEE124D2DDEA0077C005 /* CurrentWeatherView.xib */,
 				FF97AEE024D2DDEA0077C005 /* CurrentWeatherView.swift */,
-				FFFE5C7024FA4D0200E3A70A /* DailyForecastTableViewCell.swift */,
-				FFFE5C7124FA4D0200E3A70A /* SevenDayForecastTableViewCell.xib */,
+				FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */,
+				FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */,
+				FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */,
+				FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,8 +219,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF3339612509F0EA0074299B /* SevenDayWeatherView.xib in Resources */,
 				FFED39D824C722E0003834B8 /* LaunchScreen.storyboard in Resources */,
-				FFFE5C7324FA4D0200E3A70A /* SevenDayForecastTableViewCell.xib in Resources */,
+				FFFE5C7324FA4D0200E3A70A /* DailyForecastTableViewCell.xib in Resources */,
 				FFED39D524C722E0003834B8 /* Assets.xcassets in Resources */,
 				FF97AEE324D2DDEA0077C005 /* CurrentWeatherView.xib in Resources */,
 				FFED39D324C722DE003834B8 /* Main.storyboard in Resources */,
@@ -235,6 +242,7 @@
 				FF59825C250394E600A7F170 /* TwentyFourHourWeatherViewController.swift in Sources */,
 				FFE4167124CAF99100675C87 /* ForecastSelectorViewController.swift in Sources */,
 				FFE4167A24CDB69500675C87 /* ForecastPeriod.swift in Sources */,
+				FF3339632509FDFE0074299B /* DailyForecastTableViewCell.swift in Sources */,
 				FF48B1C724F0EF5600AE0B4E /* Weather.swift in Sources */,
 				FFED39D024C722DE003834B8 /* LocationSelectorViewController.swift in Sources */,
 				FF59825E250394FE00A7F170 /* SevenDayWeatherViewController.swift in Sources */,
@@ -244,7 +252,7 @@
 				FF48B1CB24F1449900AE0B4E /* Config.swift in Sources */,
 				FFED39CE24C722DE003834B8 /* SceneDelegate.swift in Sources */,
 				FF97AEE224D2DDEA0077C005 /* CurrentWeatherView.swift in Sources */,
-				FFFE5C7224FA4D0200E3A70A /* DailyForecastTableViewCell.swift in Sources */,
+				FF33395F2509F0A60074299B /* SevenDayWeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

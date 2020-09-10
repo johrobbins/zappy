@@ -167,7 +167,7 @@
                                 <rect key="frame" x="0.0" y="161.5" width="414" height="700.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyForecastCell" rowHeight="88" id="UDq-hb-Cli" userLabel="DailyForecastCell" customClass="DailyForecastTableViewCell" customModule="Zappy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="88" id="UDq-hb-Cli" userLabel="DailyForecastCell" customClass="DailyForecastTableViewCellOLD" customModule="Zappy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UDq-hb-Cli" id="K0F-20-ErQ">
@@ -232,13 +232,6 @@
                                                 <constraint firstItem="A8T-pe-VRq" firstAttribute="leading" secondItem="K0F-20-ErQ" secondAttribute="leading" constant="12" id="xWF-f7-uWS"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dateLabel" destination="9Zs-iC-Ork" id="gV5-VQ-UBL"/>
-                                            <outlet property="descriptionLabel" destination="gOd-yI-PfF" id="uB9-QN-aDI"/>
-                                            <outlet property="tempatureLabel" destination="6Iw-YU-lQu" id="Lqx-pL-Ouk"/>
-                                            <outlet property="weatherIconImageView" destination="XZu-EZ-UfJ" id="aKk-sb-nOI"/>
-                                            <outlet property="windDirectionLabel" destination="4rj-TZ-3YM" id="gzG-VQ-kzx"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -275,16 +268,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-4i-AwP" userLabel="ContentStackView">
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="774" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-4i-AwP" userLabel="ContentStackView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="YKl-4i-AwP" firstAttribute="top" secondItem="h8u-Lp-Uyr" secondAttribute="top" id="F3M-pj-NEy"/>
-                            <constraint firstItem="YKl-4i-AwP" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" id="ZyZ-KK-ysD"/>
-                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="bottom" secondItem="YKl-4i-AwP" secondAttribute="bottom" id="edi-k1-nQ2"/>
-                            <constraint firstItem="YKl-4i-AwP" firstAttribute="trailing" secondItem="h8u-Lp-Uyr" secondAttribute="trailing" id="mQP-oL-7QD"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="top" secondItem="h8u-Lp-Uyr" secondAttribute="top" id="9dJ-G3-aIR"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="trailing" secondItem="h8u-Lp-Uyr" secondAttribute="trailing" id="Y9k-if-I3T"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" id="ZAT-Lc-NYO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h8u-Lp-Uyr"/>
                     </view>

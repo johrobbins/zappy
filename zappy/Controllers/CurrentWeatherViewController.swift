@@ -23,9 +23,14 @@ class CurrentWeatherViewController: BaseWeatherViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
-                    let currentWeatherView = CurrentWeatherView(frame: CGRect(x: 0, y: 0, width: self.contentStackView.frame.width, height: 200))
-                    self.contentStackView.addSubview(currentWeatherView)
+                    let currentWeatherView = CurrentWeatherView()
                     currentWeatherView.configure(weather.currently)
+
+                    let sevenDayWeatherView = SevenDayWeatherView()
+                    sevenDayWeatherView.configure(weather)
+
+                    self.contentStackView.addArrangedSubview(currentWeatherView)
+                    self.contentStackView.addArrangedSubview(sevenDayWeatherView)
 
                 case .failure(let error):
                     print(error)

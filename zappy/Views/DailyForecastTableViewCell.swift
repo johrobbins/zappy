@@ -7,14 +7,14 @@ import UIKit
 
 class DailyForecastTableViewCell: UITableViewCell {
     @IBOutlet private var weatherIconImageView: UIImageView!
-    @IBOutlet private var dateLabel: UILabel!
-    @IBOutlet private var descriptionLabel: UILabel!
-    @IBOutlet private var tempatureLabel: UILabel!
-    @IBOutlet private var windDirectionLabel: UILabel!
+    @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var tempatureLabel: UILabel!
+    @IBOutlet var windDirectionLabel: UILabel!
 
     func configure(currentDay: CurrentDay, timezone: String) {
         weatherIconImageView.image = UIImage(named: currentDay.icon)
-        dateLabel.text = "Monday"
+        dayLabel.text = "Monday"
         descriptionLabel.text = currentDay.summary
 
         let tempatureMin = Int(currentDay.temperatureMin)
@@ -26,6 +26,6 @@ class DailyForecastTableViewCell: UITableViewCell {
         dateFormatter.timeZone = TimeZone(abbreviation: timezone)
         dateFormatter.locale = NSLocale.current
         dateFormatter.dateFormat = "EEEE" //Specify your format that you want
-        dateLabel.text = dateFormatter.string(from: date)
+        dayLabel.text = dateFormatter.string(from: date)
     }
 }
