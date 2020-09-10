@@ -6,7 +6,7 @@
 import UIKit
 
 class ForecastSelectorViewController: UITableViewController {
-    private var location: Location!
+    private var location: Location?
 
     func configure(location: Location) {
         self.location = location
@@ -30,6 +30,8 @@ class ForecastSelectorViewController: UITableViewController {
     // MARK: - Segue Handler
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let location = location else { return print("No Location defined") }
+        
         if segue.identifier == "ShowCurrentWeather" {
             let currentWeatherViewController = segue.destination as! CurrentWeatherViewController
             currentWeatherViewController.configure(location: location, forecastPeriod: ForecastPeriod.current)

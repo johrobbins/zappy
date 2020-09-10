@@ -19,6 +19,8 @@ class SevenDayWeatherViewController: BaseWeatherViewController, UITableViewDataS
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let location = location else { return print("No Location defined") }
+
         tableView.delegate = self
         tableView.dataSource = self
 

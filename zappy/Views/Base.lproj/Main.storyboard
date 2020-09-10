@@ -275,28 +275,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melbourne" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7s-L8-SZ4" userLabel="CityLabel">
-                                <rect key="frame" x="20" y="108" width="374" height="33.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33.5" id="skx-2b-iG9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="28"/>
-                                <color key="textColor" name="text-white"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-4i-AwP" userLabel="ContentStackView">
-                                <rect key="frame" x="0.0" y="141.5" width="414" height="719.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="primary"/>
                         <constraints>
-                            <constraint firstItem="YKl-4i-AwP" firstAttribute="top" secondItem="n7s-L8-SZ4" secondAttribute="bottom" id="5z5-bP-qMR"/>
-                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="bottom" secondItem="YKl-4i-AwP" secondAttribute="bottom" constant="1" id="BjW-0K-zMW"/>
-                            <constraint firstItem="n7s-L8-SZ4" firstAttribute="top" secondItem="h8u-Lp-Uyr" secondAttribute="top" constant="20" id="HyI-nj-QUX"/>
-                            <constraint firstItem="n7s-L8-SZ4" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" constant="20" id="SFY-OF-FVv"/>
-                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="trailing" secondItem="n7s-L8-SZ4" secondAttribute="trailing" constant="20" id="v1k-1a-2TM"/>
-                            <constraint firstItem="YKl-4i-AwP" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" id="wNG-KI-VTe"/>
-                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="trailing" secondItem="YKl-4i-AwP" secondAttribute="trailing" id="x7Z-xO-bvK"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="top" secondItem="h8u-Lp-Uyr" secondAttribute="top" id="F3M-pj-NEy"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="leading" secondItem="h8u-Lp-Uyr" secondAttribute="leading" id="ZyZ-KK-ysD"/>
+                            <constraint firstItem="h8u-Lp-Uyr" firstAttribute="bottom" secondItem="YKl-4i-AwP" secondAttribute="bottom" id="edi-k1-nQ2"/>
+                            <constraint firstItem="YKl-4i-AwP" firstAttribute="trailing" secondItem="h8u-Lp-Uyr" secondAttribute="trailing" id="mQP-oL-7QD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="h8u-Lp-Uyr"/>
                     </view>
@@ -305,7 +293,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="Nut-zM-GPz"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="cityLabel" destination="n7s-L8-SZ4" id="bXK-UA-cqI"/>
                         <outlet property="contentStackView" destination="YKl-4i-AwP" id="xm0-1P-cRV"/>
                     </connections>
                 </viewController>

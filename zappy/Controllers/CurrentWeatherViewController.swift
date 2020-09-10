@@ -6,7 +6,6 @@
 import UIKit
 
 class CurrentWeatherViewController: BaseWeatherViewController {
-    @IBOutlet private var cityLabel: UILabel!
     @IBOutlet private var contentStackView: UIStackView!
 
     static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> CurrentWeatherViewController {
@@ -17,7 +16,8 @@ class CurrentWeatherViewController: BaseWeatherViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+
+        guard let location = location else { return print("No Location defined") }
 
         weatherService.getWeather(for: location) { result in
             DispatchQueue.main.async {
@@ -32,10 +32,5 @@ class CurrentWeatherViewController: BaseWeatherViewController {
                 }
             }
         }
-    }
-
-    private func setupUI() {
-        guard let location = location else { return }
-        cityLabel.text = location.city
     }
 }

@@ -75,8 +75,8 @@
 				FFED39CF24C722DE003834B8 /* LocationSelectorViewController.swift */,
 				FFE4167024CAF99000675C87 /* ForecastSelectorViewController.swift */,
 				FF5982622504F88C00A7F170 /* BaseWeatherViewController.swift */,
-				FF59825B250394E600A7F170 /* TwentyFourHourWeatherViewController.swift */,
 				FFE4167224CB16B500675C87 /* CurrentWeatherViewController.swift */,
+				FF59825B250394E600A7F170 /* TwentyFourHourWeatherViewController.swift */,
 				FF59825D250394FE00A7F170 /* SevenDayWeatherViewController.swift */,
 			);
 			path = Controllers;
