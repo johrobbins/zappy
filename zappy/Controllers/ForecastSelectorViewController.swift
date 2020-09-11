@@ -17,11 +17,11 @@ class ForecastSelectorViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            performSegue(withIdentifier: "ShowCurrentWeather", sender: nil)
+            performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.current)
         case 1:
-            performSegue(withIdentifier: "ShowTwentyFourHourWeather", sender: nil)
+            performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.twentyFourHour)
         case 2:
-            performSegue(withIdentifier: "ShowSevenDayWeather", sender: nil)
+            performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.sevenDay)
         default:
             return
         }
@@ -32,15 +32,9 @@ class ForecastSelectorViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let location = location else { return print("No Location defined") }
         
-        if segue.identifier == "ShowCurrentWeather" {
-            let currentWeatherViewController = segue.destination as! CurrentWeatherViewController
-            currentWeatherViewController.configure(location: location, forecastPeriod: ForecastPeriod.current)
-        } else if segue.identifier == "ShowTwentyFourHourWeather"  {
-            let twentyFourHourWeatherViewController = segue.destination as! TwentyFourHourWeatherViewController
-            twentyFourHourWeatherViewController.configure(location: location, forecastPeriod: ForecastPeriod.twentyFourHour)
-        } else if segue.identifier == "ShowSevenDayWeather"  {
-            let sevenDayWeatherViewController = segue.destination as! SevenDayWeatherViewController
-            sevenDayWeatherViewController.configure(location: location, forecastPeriod: ForecastPeriod.sevenDay)
+        if segue.identifier == "ShowWeather" {
+            let weatherViewController = segue.destination as? WeatherViewController
+            weatherViewController?.configure(location: location, forecastPeriod: sender as! ForecastPeriod)
         }
     }
 }

@@ -5,7 +5,9 @@
 
 import UIKit
 
-class BaseWeatherViewController: UIViewController {
+class WeatherViewController: UIViewController {
+    @IBOutlet var contentStackView: UIStackView!
+    
     var location: Location?
     var forecastPeriod: ForecastPeriod?
 
@@ -15,12 +17,50 @@ class BaseWeatherViewController: UIViewController {
     private static var star = UIImage(systemName: "star")
     private static var starFill = UIImage(systemName: "star.fill")
 
+    static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> WeatherViewController {
+        let currentWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+        currentWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)
+        return currentWeatherViewController
+    }
+
     private init() {
         super.init(nibName: nil, bundle: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        guard let location = location else { return print("No Location defined") }
+
+        weatherService.getWeather(for: location) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let weather):
+
+//                    switch forecastPeriod {
+//                    case .current:
+//                    case .twentyFourHour:
+//                    case .sevenDay:
+//                    }
+
+                    let currentWeatherView = CurrentWeatherView()
+                    currentWeatherView.configure(weather.currently)
+
+                    let sevenDayWeatherView = SevenDayWeatherView()
+                    sevenDayWeatherView.configure(weather)
+
+                    self.contentStackView.addArrangedSubview(currentWeatherView)
+                    self.contentStackView.addArrangedSubview(sevenDayWeatherView)
+
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
     }
 
     func configure(location: Location, forecastPeriod: ForecastPeriod) {
@@ -53,7 +93,7 @@ class BaseWeatherViewController: UIViewController {
         let forecastSelectorBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(forecastSelectorButtonTapped))
         navigationItem.leftBarButtonItem = forecastSelectorBarButtonItem
 
-        let favouriteIcon = isFavourite() ? BaseWeatherViewController.starFill : BaseWeatherViewController.star
+        let favouriteIcon = isFavourite() ? WeatherViewController.starFill : WeatherViewController.star
         let favouriteBarButtonItem = UIBarButtonItem.init(image: favouriteIcon, style: .plain, target: self, action: #selector(favouriteButtonTapped))
         navigationItem.rightBarButtonItem = favouriteBarButtonItem
     }
@@ -73,7 +113,7 @@ class BaseWeatherViewController: UIViewController {
     }
 
     func updateFavouriteButton() {
-        let favouriteIcon = isFavourite() ? BaseWeatherViewController.starFill : BaseWeatherViewController.star
+        let favouriteIcon = isFavourite() ? WeatherViewController.starFill : WeatherViewController.star
         navigationItem.rightBarButtonItem?.image = favouriteIcon
     }
 

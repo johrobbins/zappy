@@ -31,17 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     storyboard.instantiateViewController(withIdentifier: "ForecastSelectorViewController") as! ForecastSelectorViewController
                 ]
 
-                switch favourite.forecastPeriod {
-                case .current:
-                    let currentWeatherViewController = CurrentWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
-                    viewControllerStack.append(currentWeatherViewController)
-                case .twentyFourHour:
-                    let twentyFourHourWeatherViewController = TwentyFourHourWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
-                    viewControllerStack.append(twentyFourHourWeatherViewController)
-                case .sevenDay:
-                    let sevenDayWeatherViewController = SevenDayWeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
-                    viewControllerStack.append(sevenDayWeatherViewController)
-                }
+                let weatherViewController = WeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
+                viewControllerStack.append(weatherViewController)
 
                 navigationController.setViewControllers(viewControllerStack, animated: false)
             }
