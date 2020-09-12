@@ -7,4 +7,5 @@ enum ForecastPeriod: String, Codable {
     case current = "Current weather"
     case twentyFourHour = "24-hour forecast"
     case sevenDay = "7-day forecast"
+    case allInOne = "All in one"
 }

@@ -31,31 +31,18 @@ class WeatherViewController: UIViewController {
         super.init(coder: aDecoder)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func configure(location: Location, forecastPeriod: ForecastPeriod) {
+        self.location = location
+        self.forecastPeriod = forecastPeriod
 
-        guard let location = location else { return print("No Location defined") }
+        navigationItem.title = location.city
 
         weatherService.getWeather(for: location) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
-
-//                    switch forecastPeriod {
-//                    case .current:
-//                    case .twentyFourHour:
-//                    case .sevenDay:
-//                    }
-
-                    let currentWeatherView = CurrentWeatherView()
-                    currentWeatherView.configure(weather.currently)
-
-                    let sevenDayWeatherView = SevenDayWeatherView()
-                    sevenDayWeatherView.configure(weather)
-
-                    self.contentStackView.addArrangedSubview(currentWeatherView)
-                    self.contentStackView.addArrangedSubview(sevenDayWeatherView)
-
+                    let weatherViews = self.createWeatherViews(forecastPeriod: forecastPeriod, weather: weather)
+                    weatherViews.forEach(self.contentStackView.addArrangedSubview)
                 case .failure(let error):
                     print(error)
                 }
@@ -63,11 +50,40 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    func configure(location: Location, forecastPeriod: ForecastPeriod) {
-        self.location = location
-        self.forecastPeriod = forecastPeriod
+    private func createWeatherViews(forecastPeriod: ForecastPeriod, weather: Weather) -> [UIView] {
+        var weatherViews: [UIView] = []
 
-        navigationItem.title = location.city
+        switch forecastPeriod {
+        case .current:
+            weatherViews.append(createCurrentWeatherView(weather))
+        case .twentyFourHour:
+            print("Still todo")
+        case .sevenDay:
+            weatherViews.append(createSevenDayWeatherView(weather))
+        case .allInOne:
+            weatherViews.append(createCurrentWeatherView(weather))
+            weatherViews.append(createSevenDayWeatherView(weather))
+        }
+
+        return weatherViews
+    }
+
+    private func createCurrentWeatherView(_ weather: Weather) -> UIView {
+        let currentWeatherView = CurrentWeatherView()
+        currentWeatherView.configure(weather.currently)
+        return currentWeatherView
+    }
+
+    //    private func createTwentyFourHourWeatherView(weather: Weather) -> UIView {
+    //        let currentWeatherView = TwentyFourHourWeatherView()
+    //        currentWeatherView.configure(weather.currently)
+    //        return currentWeatherView
+    //    }
+
+    private func createSevenDayWeatherView(_ weather: Weather) -> UIView {
+        let sevenDayWeatherView = SevenDayWeatherView()
+        sevenDayWeatherView.configure(weather)
+        return sevenDayWeatherView
     }
 
     override func viewWillAppear(_ animated: Bool) {

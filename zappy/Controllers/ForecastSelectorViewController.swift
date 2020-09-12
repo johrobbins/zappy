@@ -22,6 +22,8 @@ class ForecastSelectorViewController: UITableViewController {
             performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.twentyFourHour)
         case 2:
             performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.sevenDay)
+        case 3:
+            performSegue(withIdentifier: "ShowWeather", sender: ForecastPeriod.allInOne)
         default:
             return
         }
@@ -30,7 +32,7 @@ class ForecastSelectorViewController: UITableViewController {
     // MARK: - Segue Handler
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let location = location else { return print("No Location defined") }
+        guard let location = location else { return print("No location defined") }
         
         if segue.identifier == "ShowWeather" {
             let weatherViewController = segue.destination as? WeatherViewController
