@@ -89,12 +89,12 @@
 				FFED39D124C722DE003834B8 /* Main.storyboard */,
 				FF97AEE124D2DDEA0077C005 /* CurrentWeatherView.xib */,
 				FF97AEE024D2DDEA0077C005 /* CurrentWeatherView.swift */,
-				FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */,
-				FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */,
-				FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */,
-				FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */,
 				FF333968250CC3610074299B /* TwentyFourHourWeatherView.swift */,
 				FF33396A250CC3920074299B /* TwentyFourHourWeatherView.xib */,
+				FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */,
+				FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */,
+				FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */,
+				FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";

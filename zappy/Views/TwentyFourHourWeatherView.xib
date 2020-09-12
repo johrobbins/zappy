@@ -43,13 +43,13 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8lM-ty-7OR" userLabel="TopContentStackView">
                                     <rect key="frame" x="0.0" y="0.0" width="332.5" height="23"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-30-C2a" userLabel="DayLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-30-C2a" userLabel="DayLabel">
                                             <rect key="frame" x="0.0" y="0.0" width="121.5" height="23"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" name="text-white"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="7°C - 12°C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-Hn-xRM" userLabel="TempatureLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="7°C - 12°C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-Hn-xRM" userLabel="TempatureLabel">
                                             <rect key="frame" x="121.5" y="0.0" width="211" height="23"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" name="text-white"/>
@@ -60,7 +60,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Air-x1-EDd" userLabel="BottomContentStackView">
                                     <rect key="frame" x="0.0" y="23" width="332.5" height="22.5"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElT-rl-4p8" userLabel="DescriptionLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ElT-rl-4p8" userLabel="DescriptionLabel">
                                             <rect key="frame" x="0.0" y="3" width="212" height="16"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" name="text-white"/>
@@ -73,7 +73,7 @@
                                                 <constraint firstAttribute="width" secondItem="zes-Sb-6fR" secondAttribute="height" multiplier="1:1" id="Mo9-rY-e9B"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="35 km/h WNW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHT-gv-KeX" userLabel="WindDirectionLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="35 km/h WNW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="BHT-gv-KeX" userLabel="WindDirectionLabel">
                                             <rect key="frame" x="244.5" y="3" width="88" height="16"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                             <color key="textColor" name="text-white-secondary"/>

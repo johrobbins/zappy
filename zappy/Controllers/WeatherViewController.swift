@@ -56,8 +56,10 @@ class WeatherViewController: UIViewController {
         switch forecastPeriod {
         case .current:
             weatherViews.append(createCurrentWeatherView(weather.currently))
+            view.backgroundColor = UIColor(named: "primary")
         case .twentyFourHour:
             weatherViews.append(createTwentyFourHourWeatherView(weather.daily.data[0]))
+            view.backgroundColor = UIColor(named: "primary")
         case .sevenDay:
             weatherViews.append(createSevenDayWeatherView(weather))
         case .allInOne:
