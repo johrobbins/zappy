@@ -43,7 +43,9 @@
                             <outlet property="delegate" destination="pnZ-I4-Quy" id="SYu-CK-udw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select a location" id="qyC-ej-vzz"/>
+                    <navigationItem key="navigationItem" title="Select a location" id="qyC-ej-vzz">
+                        <barButtonItem key="backBarButtonItem" title="Location" id="4o3-7z-cZF"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S40-WM-4ZQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

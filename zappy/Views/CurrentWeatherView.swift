@@ -21,11 +21,6 @@ class CurrentWeatherView: UIView {
       fatalError("init(coder:) has not been implemented")
   }
 
-//  required init?(coder aDecoder: NSCoder) {
-//    super.init(coder: aDecoder)
-//    loadViewFromNib()
-//  }
-
   func loadViewFromNib() {
     Bundle.main.loadNibNamed("CurrentWeatherView", owner: self, options: nil)
     addSubview(contentView)
