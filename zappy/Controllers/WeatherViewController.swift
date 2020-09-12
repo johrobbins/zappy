@@ -109,9 +109,9 @@ class WeatherViewController: UIViewController {
         let forecastSelectorBarButtonItem = UIBarButtonItem.init(image: UIImage(systemName: "line.horizontal.3"), style: .plain, target: self, action: #selector(forecastSelectorButtonTapped))
         navigationItem.leftBarButtonItem = forecastSelectorBarButtonItem
 
-        let favouriteIcon = isFavourite() ? WeatherViewController.starFill : WeatherViewController.star
-        let favouriteBarButtonItem = UIBarButtonItem.init(image: favouriteIcon, style: .plain, target: self, action: #selector(favouriteButtonTapped))
+        let favouriteBarButtonItem = UIBarButtonItem.init(image: nil, style: .plain, target: self, action: #selector(favouriteButtonTapped))
         navigationItem.rightBarButtonItem = favouriteBarButtonItem
+        updateFavouriteButton()
     }
 
     private func resetNavigationBar() {
@@ -123,14 +123,18 @@ class WeatherViewController: UIViewController {
         navigationBar.titleTextAttributes = nil
     }
     
-    func isFavourite() -> Bool {
+    func isFavouriteView() -> Bool {
         guard let favourite = userPreferences.loadFavourite() else { return false }
         return favourite.location == location && favourite.forecastPeriod == forecastPeriod ? true : false
     }
 
     func updateFavouriteButton() {
-        let favouriteIcon = isFavourite() ? WeatherViewController.starFill : WeatherViewController.star
+        let isFavourite = isFavouriteView()
+        let favouriteIcon = isFavourite ? WeatherViewController.starFill : WeatherViewController.star
         navigationItem.rightBarButtonItem?.image = favouriteIcon
+
+        let iconTint = isFavourite ? UIColor(named: "favouriteIcon-yellow") : UIColor(named: "text-white-secondary")
+        navigationItem.rightBarButtonItem?.tintColor = iconTint
     }
 
     @objc func forecastSelectorButtonTapped() {
@@ -143,7 +147,7 @@ class WeatherViewController: UIViewController {
     }
 
     @objc func favouriteButtonTapped() {
-        if isFavourite() {
+        if isFavouriteView() {
             userPreferences.removeFavourite()
         } else {
             guard let location = location, let forecastPeriod = forecastPeriod else { return print("No Location and/or ForecastPeriod defined") }
