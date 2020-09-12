@@ -50,20 +50,20 @@
                                         <rect key="frame" x="0.0" y="23" width="332" height="23"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ftj-ys-dfq" userLabel="DescriptionLabel">
-                                                <rect key="frame" x="0.0" y="3.5" width="208.5" height="16"/>
+                                                <rect key="frame" x="0.0" y="3.5" width="211" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" name="text-black-secondary"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="251" image="wind" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9E6-Tz-EhS">
-                                                <rect key="frame" x="213.5" y="2" width="23" height="20"/>
+                                                <rect key="frame" x="216" y="2" width="23" height="20"/>
                                                 <color key="tintColor" name="primary"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="9E6-Tz-EhS" secondAttribute="height" multiplier="1:1" id="MzN-Yz-8Ic"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="WNW, 35 km/h" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uys-my-wYC" userLabel="WindDirectionLabel">
-                                                <rect key="frame" x="241.5" y="3.5" width="90.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="35 km/h WNW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uys-my-wYC" userLabel="WindDirectionLabel">
+                                                <rect key="frame" x="244" y="3.5" width="88" height="16"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                 <color key="textColor" name="text-black-secondary"/>
                                                 <nil key="highlightedColor"/>

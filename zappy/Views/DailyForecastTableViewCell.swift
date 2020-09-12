@@ -17,10 +17,7 @@ class DailyForecastTableViewCell: UITableViewCell {
         dateLabel.text = formatDate(time: currentDay.time, timezone: timezone)
         descriptionLabel.text = currentDay.summary
         tempatureLabel.attributedText = createStyledTempatureText(min: Int(currentDay.temperatureMin), max: Int(currentDay.temperatureMax))
-
-        // If windSpeed is zero, then Wind Bearing value will not be defined
-        let windCompassDirection = currentDay.windSpeed == 0 ? "" : WindDirection().convertToCompassDirection(degree: currentDay.windBearing)
-        windDirectionLabel.text = "\(Int(currentDay.windSpeed)) km/h \(windCompassDirection)"
+        windDirectionLabel.text =  WindDirection().convertToDisplayString(windSpeed: currentDay.windSpeed, windBearing: currentDay.windBearing)
     }
 
     private func createStyledTempatureText(min: Int, max: Int) -> NSMutableAttributedString {
