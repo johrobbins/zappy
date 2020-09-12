@@ -11,6 +11,8 @@
 		FF3339612509F0EA0074299B /* SevenDayWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */; };
 		FF3339632509FDFE0074299B /* DailyForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */; };
 		FF333965250A38770074299B /* WindDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF333964250A38770074299B /* WindDirection.swift */; };
+		FF333969250CC3610074299B /* TwentyFourHourWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF333968250CC3610074299B /* TwentyFourHourWeatherView.swift */; };
+		FF33396B250CC3920074299B /* TwentyFourHourWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF33396A250CC3920074299B /* TwentyFourHourWeatherView.xib */; };
 		FF48B1C524F0ECB500AE0B4E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C424F0ECB500AE0B4E /* APIService.swift */; };
 		FF48B1C724F0EF5600AE0B4E /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1C624F0EF5600AE0B4E /* Weather.swift */; };
 		FF48B1CB24F1449900AE0B4E /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48B1CA24F1449900AE0B4E /* Config.swift */; };
@@ -36,6 +38,8 @@
 		FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SevenDayWeatherView.xib; sourceTree = "<group>"; };
 		FF3339622509FDFE0074299B /* DailyForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyForecastTableViewCell.swift; sourceTree = "<group>"; };
 		FF333964250A38770074299B /* WindDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindDirection.swift; sourceTree = "<group>"; };
+		FF333968250CC3610074299B /* TwentyFourHourWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwentyFourHourWeatherView.swift; sourceTree = "<group>"; };
+		FF33396A250CC3920074299B /* TwentyFourHourWeatherView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TwentyFourHourWeatherView.xib; sourceTree = "<group>"; };
 		FF48B1C424F0ECB500AE0B4E /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		FF48B1C624F0EF5600AE0B4E /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		FF48B1CA24F1449900AE0B4E /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				FFFE5C7124FA4D0200E3A70A /* DailyForecastTableViewCell.xib */,
 				FF33395E2509F0A60074299B /* SevenDayWeatherView.swift */,
 				FF3339602509F0EA0074299B /* SevenDayWeatherView.xib */,
+				FF333968250CC3610074299B /* TwentyFourHourWeatherView.swift */,
+				FF33396A250CC3920074299B /* TwentyFourHourWeatherView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF3339612509F0EA0074299B /* SevenDayWeatherView.xib in Resources */,
+				FF33396B250CC3920074299B /* TwentyFourHourWeatherView.xib in Resources */,
 				FFED39D824C722E0003834B8 /* LaunchScreen.storyboard in Resources */,
 				FFFE5C7324FA4D0200E3A70A /* DailyForecastTableViewCell.xib in Resources */,
 				FFED39D524C722E0003834B8 /* Assets.xcassets in Resources */,
@@ -229,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF333969250CC3610074299B /* TwentyFourHourWeatherView.swift in Sources */,
 				FF5982632504F88C00A7F170 /* WeatherViewController.swift in Sources */,
 				FFE4167824CDB62B00675C87 /* Favourite.swift in Sources */,
 				FF333965250A38770074299B /* WindDirection.swift in Sources */,

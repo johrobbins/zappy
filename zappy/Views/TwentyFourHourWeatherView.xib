@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwentyFourHourWeatherView" customModule="Zappy" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="zf8-pI-z0X"/>
+                <outlet property="descriptionLabel" destination="ElT-rl-4p8" id="t9m-AI-v74"/>
+                <outlet property="tempatureLabel" destination="VV0-Hn-xRM" id="aNw-9N-HfS"/>
+                <outlet property="weatherIconImageView" destination="gwz-KN-kJG" id="wLq-3p-stZ"/>
+                <outlet property="windDirectionLabel" destination="BHT-gv-KeX" id="B3x-eM-cGu"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+            <subviews>
+                <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-c9-ReX" userLabel="SeperatorView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="0.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="AWC-NT-QaL"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="gc3-gA-YSU" userLabel="CellHorizontalStackView">
+                    <rect key="frame" x="12" y="12.5" width="390" height="45.5"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clear-day" translatesAutoresizingMaskIntoConstraints="NO" id="gwz-KN-kJG" userLabel="WeatherIconImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="45.5" height="45.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="gwz-KN-kJG" secondAttribute="height" multiplier="1:1" id="3sU-L7-mfN"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="kml-l2-grz" userLabel="ContentStackView">
+                            <rect key="frame" x="57.5" y="0.0" width="332.5" height="45.5"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="8lM-ty-7OR" userLabel="TopContentStackView">
+                                    <rect key="frame" x="0.0" y="0.0" width="332.5" height="23"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pi-30-C2a" userLabel="DayLabel">
+                                            <rect key="frame" x="0.0" y="0.0" width="121.5" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" name="text-white"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="7°C - 12°C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VV0-Hn-xRM" userLabel="TempatureLabel">
+                                            <rect key="frame" x="121.5" y="0.0" width="211" height="23"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" name="text-white"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Air-x1-EDd" userLabel="BottomContentStackView">
+                                    <rect key="frame" x="0.0" y="23" width="332.5" height="22.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Cloudy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ElT-rl-4p8" userLabel="DescriptionLabel">
+                                            <rect key="frame" x="0.0" y="3" width="212" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" name="text-white"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="251" image="wind" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zes-Sb-6fR">
+                                            <rect key="frame" x="217" y="2" width="22.5" height="19.5"/>
+                                            <color key="tintColor" name="text-white-secondary"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="zes-Sb-6fR" secondAttribute="height" multiplier="1:1" id="Mo9-rY-e9B"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="35 km/h WNW" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHT-gv-KeX" userLabel="WindDirectionLabel">
+                                            <rect key="frame" x="244.5" y="3" width="88" height="16"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                            <color key="textColor" name="text-white-secondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" name="primary"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="gc3-gA-YSU" secondAttribute="bottom" constant="12" id="HOb-I3-SIn"/>
+                <constraint firstItem="gc3-gA-YSU" firstAttribute="top" secondItem="Rap-c9-ReX" secondAttribute="bottom" constant="12" id="LR2-Hv-Zw5"/>
+                <constraint firstAttribute="height" constant="70" id="R0w-Qg-JqN"/>
+                <constraint firstItem="Rap-c9-ReX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SeC-2Q-EFv"/>
+                <constraint firstItem="gc3-gA-YSU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="12" id="a8M-o7-Mua"/>
+                <constraint firstItem="Rap-c9-ReX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="car-n0-8sS"/>
+                <constraint firstAttribute="trailing" secondItem="gc3-gA-YSU" secondAttribute="trailing" constant="12" id="les-06-AP8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Rap-c9-ReX" secondAttribute="trailing" id="zqZ-5y-qGt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="124"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="clear-day" width="512" height="512"/>
+        <image name="wind" catalog="system" width="128" height="103"/>
+        <namedColor name="primary">
+            <color red="0.26666666666666666" green="0.46274509803921571" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-white-secondary">
+            <color red="1" green="1" blue="1" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

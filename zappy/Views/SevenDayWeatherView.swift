@@ -9,7 +9,8 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var tableView: UITableView!
 
-    private var weather: Weather?
+    private var sevenDayList: [CurrentDay]?
+    private var timezone: String?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,19 +39,23 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
 
         tableView.register(UINib(nibName: String(describing: DailyForecastTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DailyForecastTableViewCell.self))
 
-        self.weather = weather
+        var dailyData = weather.daily.data
+        dailyData.removeFirst() // Remove first element which contains current day data
+        self.sevenDayList = dailyData
+
+        self.timezone = weather.timezone
+
         self.tableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return weather?.daily.data.count ?? 0
+        return sevenDayList?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DailyForecastTableViewCell.self), for: indexPath) as! DailyForecastTableViewCell
 
-        //TODO: remove weather?.daily.data[0] as this is current day
-        if let currentDay = weather?.daily.data, let timezone = weather?.timezone {
+        if let currentDay = sevenDayList, let timezone = timezone {
             cell.configure(currentDay: currentDay[indexPath.row], timezone: timezone)
             return cell
         }

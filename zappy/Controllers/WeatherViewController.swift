@@ -55,30 +55,31 @@ class WeatherViewController: UIViewController {
 
         switch forecastPeriod {
         case .current:
-            weatherViews.append(createCurrentWeatherView(weather))
+            weatherViews.append(createCurrentWeatherView(weather.currently))
         case .twentyFourHour:
-            print("Still todo")
+            weatherViews.append(createTwentyFourHourWeatherView(weather.daily.data[0]))
         case .sevenDay:
             weatherViews.append(createSevenDayWeatherView(weather))
         case .allInOne:
-            weatherViews.append(createCurrentWeatherView(weather))
+            weatherViews.append(createCurrentWeatherView(weather.currently))
+            weatherViews.append(createTwentyFourHourWeatherView(weather.daily.data[0]))
             weatherViews.append(createSevenDayWeatherView(weather))
         }
 
         return weatherViews
     }
 
-    private func createCurrentWeatherView(_ weather: Weather) -> UIView {
+    private func createCurrentWeatherView(_ currentWeather: Current) -> UIView {
         let currentWeatherView = CurrentWeatherView()
-        currentWeatherView.configure(weather.currently)
+        currentWeatherView.configure(currentWeather)
         return currentWeatherView
     }
 
-    //    private func createTwentyFourHourWeatherView(weather: Weather) -> UIView {
-    //        let currentWeatherView = TwentyFourHourWeatherView()
-    //        currentWeatherView.configure(weather.currently)
-    //        return currentWeatherView
-    //    }
+    private func createTwentyFourHourWeatherView(_ currentDay: CurrentDay) -> UIView {
+        let twentyFourHourWeatherView = TwentyFourHourWeatherView()
+        twentyFourHourWeatherView.configure(currentDay)
+        return twentyFourHourWeatherView
+    }
 
     private func createSevenDayWeatherView(_ weather: Weather) -> UIView {
         let sevenDayWeatherView = SevenDayWeatherView()
