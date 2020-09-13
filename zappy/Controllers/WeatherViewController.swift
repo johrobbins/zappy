@@ -37,14 +37,25 @@ class WeatherViewController: UIViewController {
 
         navigationItem.title = location.city
 
+        createWeatherViews(location: location, forecastPeriod: forecastPeriod)
+    }
+
+    private func createWeatherViews(location: Location, forecastPeriod: ForecastPeriod) {
         weatherService.getWeather(for: location) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
                     let weatherViews = self.createWeatherViews(forecastPeriod: forecastPeriod, weather: weather)
                     weatherViews.forEach(self.contentStackView.addArrangedSubview)
+                    //self.view.backgroundColor = UIColor(named: "primary")
+
                 case .failure(let error):
-                    print(error)
+                    let retryAction = { self.createWeatherViews(location: location, forecastPeriod: forecastPeriod) }
+
+                    let errorView = ErrorView()
+                    errorView.configure(error: error, action: retryAction)
+                    self.contentStackView.addArrangedSubview(errorView)
+                    self.contentStackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
                 }
             }
         }

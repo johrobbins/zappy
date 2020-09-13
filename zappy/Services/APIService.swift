@@ -6,12 +6,10 @@
 import Foundation
 
 class APIService {
-
     enum RequestError: Error {
         case networkError(Error)
         case dataNotFound
         case jsonParsingError(Error)
-        case invalidStatusCode(Int)
     }
 
     enum Result<Weather> {
@@ -22,7 +20,7 @@ class APIService {
     func getWeather(for location: Location, completion: @escaping (Result<Weather>) -> Void) {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "api.darksky.net"
+        components.host = "api.darksky.ne"
         components.path = "/forecast/\(darkWeatherAPIKey)/\(location.latitude),\(location.longitude)"
         components.queryItems = [URLQueryItem(name: "exclude", value: "minutely,hourly,flags"), //daily
                                  URLQueryItem(name: "units", value: "auto")]

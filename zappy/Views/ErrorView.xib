@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorView" customModule="Zappy" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="gDZ-hz-1Xz"/>
+                <outlet property="descriptionLabel" destination="GaZ-bb-WG5" id="Jws-BV-GcW"/>
+                <outlet property="errorView" destination="dsM-kV-cNV" id="jMq-fG-KHJ"/>
+                <outlet property="retryButton" destination="Xhp-gH-Bqd" id="qHQ-lG-KZJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-kV-cNV" userLabel="ErrorView">
+                    <rect key="frame" x="57" y="50" width="300" height="400"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error-icon" translatesAutoresizingMaskIntoConstraints="NO" id="KtB-qL-2Q9" userLabel="ErrorIconImageView">
+                            <rect key="frame" x="94" y="30" width="112" height="112"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="112" id="MmZ-cG-094"/>
+                                <constraint firstAttribute="height" constant="112" id="xNY-d2-4rt"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Something went wrong!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2tu-C3-lQ2" userLabel="TitleLabel">
+                            <rect key="frame" x="24" y="172" width="252" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <color key="textColor" name="text-black-secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhp-gH-Bqd" userLabel="RetryButton">
+                            <rect key="frame" x="84" y="306" width="132" height="44"/>
+                            <color key="backgroundColor" name="error-red"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="132" id="gj9-kl-jhl"/>
+                                <constraint firstAttribute="height" constant="44" id="p2V-HR-1sN"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                            <state key="normal" title="Retry">
+                                <color key="titleColor" name="text-white"/>
+                            </state>
+                            <connections>
+                                <action selector="retryButtonTapped:" destination="-1" eventType="touchUpInside" id="QMR-eS-yXr"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please try again" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-bb-WG5" userLabel="DescriptionLabel">
+                            <rect key="frame" x="24" y="212.5" width="252" height="20.5"/>
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                            <color key="textColor" name="text-black-secondary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="KtB-qL-2Q9" firstAttribute="centerX" secondItem="dsM-kV-cNV" secondAttribute="centerX" id="1J5-db-bv7"/>
+                        <constraint firstAttribute="bottom" secondItem="Xhp-gH-Bqd" secondAttribute="bottom" constant="50" id="1n8-Ft-gNX"/>
+                        <constraint firstItem="GaZ-bb-WG5" firstAttribute="leading" secondItem="dsM-kV-cNV" secondAttribute="leading" constant="24" id="2ja-4V-rFj"/>
+                        <constraint firstAttribute="trailing" secondItem="GaZ-bb-WG5" secondAttribute="trailing" constant="24" id="9zy-Qi-Rzw"/>
+                        <constraint firstAttribute="width" constant="300" id="CRC-fS-hTM"/>
+                        <constraint firstItem="2tu-C3-lQ2" firstAttribute="top" secondItem="KtB-qL-2Q9" secondAttribute="bottom" constant="30" id="IiO-dp-8dA"/>
+                        <constraint firstItem="2tu-C3-lQ2" firstAttribute="leading" secondItem="dsM-kV-cNV" secondAttribute="leading" constant="24" id="Vhm-Su-QPh"/>
+                        <constraint firstItem="Xhp-gH-Bqd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GaZ-bb-WG5" secondAttribute="bottom" constant="20" id="aaH-eL-qbm"/>
+                        <constraint firstAttribute="height" constant="400" id="cTp-XR-Yzq"/>
+                        <constraint firstItem="Xhp-gH-Bqd" firstAttribute="centerX" secondItem="dsM-kV-cNV" secondAttribute="centerX" id="foS-yj-8r1"/>
+                        <constraint firstAttribute="trailing" secondItem="2tu-C3-lQ2" secondAttribute="trailing" constant="24" id="o7M-xp-kCh"/>
+                        <constraint firstItem="GaZ-bb-WG5" firstAttribute="top" secondItem="2tu-C3-lQ2" secondAttribute="bottom" constant="20" id="sZf-q6-I6f"/>
+                        <constraint firstItem="KtB-qL-2Q9" firstAttribute="top" secondItem="dsM-kV-cNV" secondAttribute="top" constant="30" id="sef-qd-I7f"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="primary"/>
+            <constraints>
+                <constraint firstItem="dsM-kV-cNV" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="XiY-Zv-r9T"/>
+                <constraint firstItem="dsM-kV-cNV" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wud-4Q-S9K"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="123.88392857142857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="error-icon" width="512" height="512"/>
+        <namedColor name="error-red">
+            <color red="0.88627450980392153" green="0.44705882352941179" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.26666666666666666" green="0.46274509803921571" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-black-secondary">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.80000001192092896" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text-white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
