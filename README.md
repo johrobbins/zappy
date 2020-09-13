@@ -1,6 +1,8 @@
 # zappy
 Weather app to warn you of those stormy days
 
+### Setup
+
 **Note:** this project uses Dark Sky API which will be ending support in 2021. 
 
 Find the API documentation [here](https://web.archive.org/web/20200331192632/https://darksky.net/dev/docs) 
@@ -9,6 +11,8 @@ To make requests to the api you need to add a local `Config.swift` file to the p
 ```
 let darkWeatherAPIKey = "INSERT YOUR API KEY HERE"
 ```
+
+### Screenshots
 
 <img src="https://github.com/johrobbins/zappy/blob/master/Resources/LaunchScreen.png" width="250px" /><img src="https://github.com/johrobbins/zappy/blob/master/Resources/LocationScreen.png" width="250px" />
 
