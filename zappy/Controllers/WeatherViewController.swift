@@ -31,8 +31,20 @@ class WeatherViewController: UIViewController {
     }
 
     private func createWeatherViews(location: Location, forecastPeriod: ForecastPeriod) {
+
+        // Display loading spinner while waiting for data to be returned
+        let loadingSpinner = LoadingSpinnerViewController()
+        addChild(loadingSpinner)
+        loadingSpinner.view.frame = view.frame
+        view.addSubview(loadingSpinner.view)
+
         weatherService.getWeather(for: location) { result in
             DispatchQueue.main.async {
+
+                // Cancel loading spinner
+                loadingSpinner.view.removeFromSuperview()
+                loadingSpinner.removeFromParent()
+
                 switch result {
                 case .success(let weather):
                     let weatherViews = self.createViews(forecastPeriod: forecastPeriod, weather: weather)
