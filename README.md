@@ -6,10 +6,9 @@ Note: this project uses Dark Sky API which will be ending support in 2020.
 To make requests to the api you need to add a local `Config.swift` file to the project with the following variable declared
 `let darkWeatherAPIKey = "INSERT YOUR API KEY HERE"`
 
-<img src="https://github.com/johrobbins/word-match/blob/master/Resources/LaunchScreen.png" width="250px" /> 
-<img src="https://github.com/johrobbins/word-match/blob/master/Resources/LocationScreen.png" width="250px" /> 
-<img src="https://github.com/johrobbins/word-match/blob/master/Resources/WeatherScreen.png" width="250px" /> 
-<img src="https://github.com/johrobbins/word-match/blob/master/Resources/ErrorHandlingScreen.png" width="250px" />
+<img src="https://github.com/johrobbins/zappy/blob/master/Resources/LocationScreen.png" width="250px" /> 
+<img src="https://github.com/johrobbins/zappy/blob/master/Resources/WeatherScreen.png" width="250px" /> 
+<img src="https://github.com/johrobbins/zappy/blob/master/Resources/ErrorHandlingScreen.png" width="250px" />
 
 ### Credits
 Weather API is Powered by [Dark Sky](https://darksky.net/poweredby/)
