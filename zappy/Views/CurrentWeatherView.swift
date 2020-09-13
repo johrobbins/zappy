@@ -6,12 +6,18 @@
 import UIKit
 
 class CurrentWeatherView: UIView {
-    @IBOutlet private var contentView: UIView!
     @IBOutlet private var summaryLabel: UILabel!
     @IBOutlet private var currentTempatureLabel: UILabel!
     @IBOutlet private var feelsLikeTempatureLabel: UILabel!
     @IBOutlet private var iconImageView: UIImageView!
     @IBOutlet private var windDirectionLabel: UILabel!
+
+    private var numberFormatter = NumberFormatter() {
+        didSet {
+            numberFormatter.numberStyle = .decimal
+            numberFormatter.maximumFractionDigits = 2
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,21 +28,19 @@ class CurrentWeatherView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func loadViewFromNib() {
-        Bundle.main.loadNibNamed("CurrentWeatherView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    }
-
     func configure(_ currentWeather: Current) {
         summaryLabel.text = currentWeather.summary
-        currentTempatureLabel.text = String(format: "%.1f°", currentWeather.temperature)
-        feelsLikeTempatureLabel.text = String(format: "Feels like %.1f°", currentWeather.apparentTemperature)
-        iconImageView.image = UIImage(named: currentWeather.icon)
+        currentTempatureLabel.text = "\(formatTempaturetoString(with: currentWeather.temperature))°"
+        feelsLikeTempatureLabel.text = "Feels like \(formatTempaturetoString(with: currentWeather.apparentTemperature))°"
+        iconImageView.image = UIImage(named: currentWeather.icon) ?? UIImage(named: "icon-placeholder")
         windDirectionLabel.text =  WindDirection().convertToDisplayString(windSpeed: currentWeather.windSpeed, windBearing: currentWeather.windBearing)
+    }
+
+    private func formatTempaturetoString(with tempature: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 1
+
+        return numberFormatter.string(from: NSNumber(value: tempature)) ?? "-999"
     }
 }

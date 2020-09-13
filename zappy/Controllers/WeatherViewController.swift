@@ -17,16 +17,6 @@ class WeatherViewController: UIViewController {
     private static var star = UIImage(systemName: "star")
     private static var starFill = UIImage(systemName: "star.fill")
 
-    static func createInstance(location: Location, forecastPeriod: ForecastPeriod) -> WeatherViewController {
-        let currentWeatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
-        currentWeatherViewController.configure(location: location, forecastPeriod: forecastPeriod)
-        return currentWeatherViewController
-    }
-
-    private init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -45,9 +35,8 @@ class WeatherViewController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let weather):
-                    let weatherViews = self.createWeatherViews(forecastPeriod: forecastPeriod, weather: weather)
+                    let weatherViews = self.createViews(forecastPeriod: forecastPeriod, weather: weather)
                     weatherViews.forEach(self.contentStackView.addArrangedSubview)
-                    //self.view.backgroundColor = UIColor(named: "primary")
 
                 case .failure(let error):
                     let retryAction = { self.createWeatherViews(location: location, forecastPeriod: forecastPeriod) }
@@ -61,15 +50,13 @@ class WeatherViewController: UIViewController {
         }
     }
 
-    private func createWeatherViews(forecastPeriod: ForecastPeriod, weather: Weather) -> [UIView] {
+    private func createViews(forecastPeriod: ForecastPeriod, weather: Weather) -> [UIView] {
         var weatherViews: [UIView] = []
 
         switch forecastPeriod {
         case .current:
-            view.backgroundColor = UIColor(named: "primary")
             weatherViews.append(createCurrentWeatherView(weather.currently))
         case .twentyFourHour:
-            view.backgroundColor = UIColor(named: "primary")
             weatherViews.append(createTwentyFourHourWeatherView(weather.daily.data[0]))
         case .sevenDay:
             weatherViews.append(createSevenDayWeatherView(weather))

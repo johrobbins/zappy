@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CurrentWeatherView" customModule="Zappy" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="i5M-Pr-FkT" id="CXZ-NE-9Tn"/>
                 <outlet property="currentTempatureLabel" destination="Gbh-xk-9Rq" id="Jfa-sT-hbG"/>
                 <outlet property="feelsLikeTempatureLabel" destination="Nf3-eR-MMm" id="Vpy-ZQ-TtM"/>
                 <outlet property="iconImageView" destination="qjV-hl-Q42" id="r94-vk-Ln9"/>

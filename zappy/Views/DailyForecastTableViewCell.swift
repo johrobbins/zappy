@@ -13,7 +13,7 @@ class DailyForecastTableViewCell: UITableViewCell {
     @IBOutlet var windDirectionLabel: UILabel!
 
     func configure(currentDay: CurrentDay, timezone: String) {
-        weatherIconImageView.image = UIImage(named: currentDay.icon)
+        weatherIconImageView.image = UIImage(named: currentDay.icon) ?? UIImage(named: "icon-placeholder")
         dateLabel.text = formatDate(time: currentDay.time, timezone: timezone)
         descriptionLabel.text = currentDay.summary
         tempatureLabel.attributedText = createStyledTempatureText(min: Int(currentDay.temperatureMin), max: Int(currentDay.temperatureMax))

@@ -6,7 +6,6 @@
 import UIKit
 
 class TwentyFourHourWeatherView: UIView  {
-    @IBOutlet private var contentView: UIView!
     @IBOutlet private var weatherIconImageView: UIImageView!
     @IBOutlet private var tempatureLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
@@ -21,18 +20,8 @@ class TwentyFourHourWeatherView: UIView  {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func loadViewFromNib() {
-        Bundle.main.loadNibNamed("TwentyFourHourWeatherView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    }
-
     func configure(_ currentDay: CurrentDay) {
-        weatherIconImageView.image = UIImage(named: currentDay.icon)
+        weatherIconImageView.image = UIImage(named: currentDay.icon) ?? UIImage(named: "icon-placeholder")
         descriptionLabel.text = currentDay.summary
         tempatureLabel.attributedText = createStyledTempatureText(min: Int(currentDay.temperatureMin), max: Int(currentDay.temperatureMax))
         windDirectionLabel.text =  WindDirection().convertToDisplayString(windSpeed: currentDay.windSpeed, windBearing: currentDay.windBearing)

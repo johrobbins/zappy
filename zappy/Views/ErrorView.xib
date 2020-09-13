@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorView" customModule="Zappy" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="gDZ-hz-1Xz"/>
                 <outlet property="descriptionLabel" destination="GaZ-bb-WG5" id="Jws-BV-GcW"/>
                 <outlet property="errorView" destination="dsM-kV-cNV" id="jMq-fG-KHJ"/>
                 <outlet property="retryButton" destination="Xhp-gH-Bqd" id="qHQ-lG-KZJ"/>
@@ -89,7 +88,7 @@
     <resources>
         <image name="error-icon" width="512" height="512"/>
         <namedColor name="error-red">
-            <color red="0.88627450980392153" green="0.44705882352941179" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.88599997758865356" green="0.44699999690055847" blue="0.28200000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primary">
             <color red="0.26666666666666666" green="0.46274509803921571" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

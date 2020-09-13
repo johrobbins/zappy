@@ -20,9 +20,9 @@ class APIService {
     func getWeather(for location: Location, completion: @escaping (Result<Weather>) -> Void) {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "api.darksky.ne"
+        components.host = "api.darksky.net"
         components.path = "/forecast/\(darkWeatherAPIKey)/\(location.latitude),\(location.longitude)"
-        components.queryItems = [URLQueryItem(name: "exclude", value: "minutely,hourly,flags"), //daily
+        components.queryItems = [URLQueryItem(name: "exclude", value: "minutely,hourly,flags"),
                                  URLQueryItem(name: "units", value: "auto")]
 
         guard let url = components.url else {

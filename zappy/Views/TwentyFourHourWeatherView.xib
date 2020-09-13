@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TwentyFourHourWeatherView" customModule="Zappy" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="zf8-pI-z0X"/>
                 <outlet property="descriptionLabel" destination="ElT-rl-4p8" id="t9m-AI-v74"/>
                 <outlet property="tempatureLabel" destination="VV0-Hn-xRM" id="aNw-9N-HfS"/>
                 <outlet property="weatherIconImageView" destination="gwz-KN-kJG" id="wLq-3p-stZ"/>

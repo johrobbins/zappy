@@ -6,7 +6,6 @@
 import UIKit
 
 class ErrorView: UIView {
-    @IBOutlet private var contentView: UIView!
     @IBOutlet var errorView: UIView!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var retryButton: UIButton!
@@ -22,16 +21,6 @@ class ErrorView: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    private func loadViewFromNib() {
-        Bundle.main.loadNibNamed("ErrorView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
     }
 
     private func setupUI() {
@@ -51,7 +40,7 @@ class ErrorView: UIView {
         case .networkError(let networkError):
             descriptionLabel.text = networkError.localizedDescription
         case .dataNotFound, .jsonParsingError(_):
-            descriptionLabel.text = "Please try again"
+            descriptionLabel.text = "Sorry, looks like something has gone wrong on our side. Please try again later"
         }
     }
 

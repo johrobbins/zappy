@@ -31,7 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     storyboard.instantiateViewController(withIdentifier: "ForecastSelectorViewController") as! ForecastSelectorViewController
                 ]
 
-                let weatherViewController = WeatherViewController.createInstance(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
+                let weatherViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
+                weatherViewController.configure(location: favourite.location, forecastPeriod: favourite.forecastPeriod)
                 viewControllerStack.append(weatherViewController)
 
                 navigationController.setViewControllers(viewControllerStack, animated: false)

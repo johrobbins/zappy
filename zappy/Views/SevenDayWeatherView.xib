@@ -8,7 +8,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SevenDayWeatherView" customModule="Zappy" customModuleProvider="target">
             <connections>
-                <outlet property="contentView" destination="iN0-l3-epB" id="unM-Cb-YC0"/>
                 <outlet property="tableView" destination="LPY-Yb-g7C" id="783-pr-HEl"/>
             </connections>
         </placeholder>

@@ -6,7 +6,6 @@
 import UIKit
 
 class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet private var contentView: UIView!
     @IBOutlet private var tableView: UITableView!
 
     private var sevenDayList: [CurrentDay]?
@@ -21,16 +20,6 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func loadViewFromNib() {
-        Bundle.main.loadNibNamed("SevenDayWeatherView", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-    }
-
     func configure(_ weather: Weather) {
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,7 +29,7 @@ class SevenDayWeatherView: UIView, UITableViewDataSource, UITableViewDelegate {
         tableView.register(UINib(nibName: String(describing: DailyForecastTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DailyForecastTableViewCell.self))
 
         var dailyData = weather.daily.data
-        dailyData.removeFirst() // Remove first element which contains current day data
+        dailyData.removeFirst() // Remove first element which contains `Today` data
         self.sevenDayList = dailyData
 
         self.timezone = weather.timezone
